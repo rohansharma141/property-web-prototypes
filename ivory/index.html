@@ -9,7 +9,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
 /* Layout: editorial single page — magazine spreads per project, line-drawn elevations in place of photos, one dark band for the Noida essay */
 :root{
@@ -17,7 +17,7 @@
   --gold:#957341; --gold-2:#C4AD82; --rule:#D9D1C1;
   --band:#1E201C; --on-band:#EFE9DC; --on-band-2:#ADA796;
   --wa:#1FA855; --field:#FFFDF8; --shadow:rgba(28,27,24,.16);
-  --f-display:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-display:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --maxw:1180px;
@@ -41,7 +41,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 a{color:inherit}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 @media (min-width:760px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
-h1,h2,h3{font-family:var(--f-display);font-weight:400;text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;text-wrap:balance;margin:0;letter-spacing:-.02em}
 p{margin:0}
 .eyebrow{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
 .mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
@@ -56,7 +56,7 @@ section{padding-block:72px}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo svg{width:34px;height:34px;flex:none}
 .logo-word{display:flex;flex-direction:column;line-height:1}
-.logo-word b{font-family:var(--f-display);font-weight:500;font-size:20px;letter-spacing:.08em}
+.logo-word b{font-family:var(--f-display);font-weight:600;font-size:17px;letter-spacing:.16em}
 .logo-word span{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-2);margin-top:4px}
 .nav{display:none;gap:28px;align-items:center}
 .nav a{text-decoration:none;font-size:14px;color:var(--ink-2)}
@@ -73,7 +73,7 @@ section{padding-block:72px}
 .menu{position:fixed;inset:0;z-index:70;background:var(--paper);display:flex;flex-direction:column;padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
 .menu-top{display:flex;justify-content:space-between;align-items:center;height:52px}
 .menu nav{display:flex;flex-direction:column;margin-top:40px;border-top:1px solid var(--rule)}
-.menu nav a{font-family:var(--f-display);font-size:34px;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline}
+.menu nav a{font-family:var(--f-display);font-weight:500;letter-spacing:-.02em;font-size:26px;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline}
 .menu nav a small{font-family:var(--f-mono);font-size:11px;color:var(--ink-2);letter-spacing:.1em}
 .menu-foot{margin-top:auto;display:grid;gap:10px}
 .menu-foot .btn{width:100%}
@@ -83,8 +83,8 @@ section{padding-block:72px}
 @media (min-width:960px){.hero{padding-block:80px 0}}
 .hero-grid{display:grid;gap:40px}
 @media (min-width:960px){.hero-grid{grid-template-columns:1.25fr .9fr;gap:64px;align-items:start}}
-.hero h1{font-size:clamp(42px,8.4vw,86px);line-height:1.02;margin-top:18px}
-.hero h1 em{font-style:italic;color:var(--gold)}
+.hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.1;margin-top:18px;letter-spacing:-.03em}
+.hero h1 em{font-style:normal;color:var(--gold)}
 .hero .lede{margin-top:22px}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
@@ -93,7 +93,7 @@ section{padding-block:72px}
 
 .card-form{background:var(--field);border:1px solid var(--rule);padding:28px 22px;box-shadow:0 24px 60px -30px var(--shadow)}
 @media (min-width:760px){.card-form{padding:34px 32px}}
-.card-form h2{font-size:26px;line-height:1.15}
+.card-form h2{font-size:23px;line-height:1.2}
 .card-form .sub{font-size:14px;color:var(--ink-2);margin-top:6px}
 .lead-form{display:grid;gap:14px;margin-top:22px}
 .field{display:grid;gap:6px;min-width:0}
@@ -109,19 +109,34 @@ section{padding-block:72px}
 .form-note{font-size:12px;color:var(--ink-2)}
 .form-err{font-size:13px;color:#B5462F}
 .form-ok{border-top:1px solid var(--gold);padding-top:16px;margin-top:18px}
-.form-ok b{font-family:var(--f-display);font-weight:500;font-size:22px;display:block}
+.form-ok b{font-family:var(--f-display);font-weight:600;font-size:19px;display:block}
 .form-ok p{font-size:14px;color:var(--ink-2);margin-top:6px}
 
-.skyline{margin-top:56px;color:var(--ink);border-bottom:1px solid var(--rule)}
-.skyline svg{display:block;width:100%;height:auto}
-.skyline-cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:12px 14px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.skyline{margin-top:56px;color:var(--ink);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);position:relative}
+.sky-scroll{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;cursor:grab;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y}
+.sky-scroll::-webkit-scrollbar{display:none}
+.sky-scroll.drag{cursor:grabbing;user-select:none}
+.sky-scroll svg{display:block;height:clamp(190px,24vw,260px);width:auto;max-width:none}
+.sky-fade{position:absolute;top:0;bottom:52px;width:56px;pointer-events:none;opacity:0;transition:opacity .25s}
+.sky-fade.l{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.sky-fade.r{right:0;background:linear-gradient(270deg,var(--paper),transparent)}
+.skyline.more-l .sky-fade.l,.skyline.more-r .sky-fade.r{opacity:1}
+.sky-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;height:52px;border-top:1px solid var(--rule)}
+.sky-hint{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
+.sky-prog{flex:1;max-width:220px;height:2px;background:var(--rule);position:relative;margin-inline:auto}
+.sky-prog i{position:absolute;left:0;top:0;bottom:0;background:var(--gold)}
+.sky-nav{display:flex;gap:6px}
+.sky-nav button{width:36px;height:36px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;font:15px/1 var(--f-mono)}
+.sky-nav button:hover:not(:disabled){border-color:var(--ink)}
+.sky-nav button:disabled{opacity:.3;cursor:default}
+@media (max-width:520px){.sky-prog{display:none}}
 
 /* Partner strip */
 .strip{padding-block:28px;border-bottom:1px solid var(--rule)}
 .strip .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:14px 36px}
 .strip .eyebrow{color:var(--ink-2)}
 .strip ul{display:flex;flex-wrap:wrap;gap:10px 32px;list-style:none;margin:0;padding:0}
-.strip li{font-family:var(--f-display);font-size:22px;letter-spacing:.06em}
+.strip li{font-family:var(--f-display);font-weight:600;font-size:18px;letter-spacing:.12em}
 
 /* Why Noida band */
 .band{background:var(--band);color:var(--on-band)}
@@ -130,8 +145,8 @@ section{padding-block:72px}
 :root:not([data-theme="light"]) .band .eyebrow{color:var(--gold)}
 .essay-head{display:grid;gap:22px}
 @media (min-width:960px){.essay-head{grid-template-columns:1fr 1fr;gap:64px;align-items:end}}
-.essay-head h2{font-size:clamp(34px,5.6vw,60px);line-height:1.06}
-.essay-head h2 em{font-style:italic;color:var(--gold-2)}
+.essay-head h2{font-size:clamp(28px,4vw,44px);line-height:1.15}
+.essay-head h2 em{font-style:normal;color:var(--gold-2)}
 .drivers{display:grid;gap:0;margin-top:56px;border-top:1px solid color-mix(in srgb,var(--on-band) 18%,transparent)}
 @media (min-width:760px){.drivers{grid-template-columns:1fr 1fr}}
 @media (min-width:1100px){.drivers{grid-template-columns:repeat(4,1fr)}}
@@ -139,7 +154,7 @@ section{padding-block:72px}
 @media (min-width:760px){.driver{padding:28px 28px 34px 0}.driver+.driver{padding-left:28px;border-left:1px solid color-mix(in srgb,var(--on-band) 18%,transparent)}.driver:nth-child(3){border-left:0;padding-left:0}}
 @media (min-width:1100px){.driver:nth-child(3){border-left:1px solid color-mix(in srgb,var(--on-band) 18%,transparent);padding-left:28px}}
 .driver .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-band-2)}
-.driver h3{font-size:26px;line-height:1.15;margin-top:12px}
+.driver h3{font-size:20px;line-height:1.25;margin-top:12px;font-weight:600;letter-spacing:-.01em}
 .driver p{font-size:15px;color:var(--on-band-2);margin-top:10px}
 
 /* Micro-markets */
@@ -151,8 +166,8 @@ section{padding-block:72px}
 @media (max-width:959px){.map{position:static}}
 .mm-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
 .mm{display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:26px 0;border-bottom:1px solid var(--rule)}
-.mm .n{font-family:var(--f-display);font-size:34px;line-height:1;color:var(--gold)}
-.mm h3{font-size:28px;line-height:1.1}
+.mm .n{font-family:var(--f-mono);font-size:22px;line-height:1.2;color:var(--gold)}
+.mm h3{font-size:22px;line-height:1.2;font-weight:600;letter-spacing:-.01em}
 .mm .sectors{font-family:var(--f-mono);font-size:12px;color:var(--ink-2);margin-top:6px;letter-spacing:.04em}
 .mm p{grid-column:2;font-size:15.5px;color:var(--ink-2);margin-top:10px;max-width:60ch}
 .mm dl{grid-column:2;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin:14px 0 0;font-size:14px}
@@ -161,38 +176,39 @@ section{padding-block:72px}
 
 /* Collection */
 .coll-head{display:grid;gap:18px;margin-bottom:24px}
-.coll-head h2{font-size:clamp(36px,6vw,64px);line-height:1.04}
-.coll-head h2 em{font-style:italic;color:var(--gold)}
+.coll-head h2{font-size:clamp(28px,4.2vw,46px);line-height:1.12}
+.coll-head h2 em{font-style:normal;color:var(--gold)}
 .dev{padding-top:56px}
 .dev-head{display:grid;gap:10px;padding-bottom:22px;border-bottom:1px solid var(--ink)}
 @media (min-width:760px){.dev-head{grid-template-columns:1fr auto;align-items:end;gap:24px}}
 .dev-head .chap{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
-.dev-head h3{font-size:clamp(40px,6.4vw,68px);line-height:1;letter-spacing:.02em}
+.dev-head h3{font-size:clamp(26px,3.6vw,38px);line-height:1.1;letter-spacing:.1em;font-weight:600}
 .dev-head p{font-size:15px;color:var(--ink-2);max-width:46ch}
 .spread{display:grid;gap:26px;padding-block:36px;border-bottom:1px solid var(--rule)}
 @media (min-width:860px){.spread{grid-template-columns:1.05fr 1fr;gap:56px;align-items:center;padding-block:48px}.spread.flip .plate{order:2}}
 .plate{position:relative;aspect-ratio:4/3;max-width:100%;background:var(--paper-2);border:1px solid var(--rule);overflow:hidden;color:var(--ink)}
 .plate svg{position:absolute;inset:0;width:100%;height:100%}
 .plate .tag{position:absolute;left:14px;top:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;background:var(--paper);border:1px solid var(--rule);padding:5px 8px}
-.plate .sec{position:absolute;right:14px;bottom:12px;font-family:var(--f-display);font-style:italic;font-size:15px;color:var(--ink-2)}
+.plate .sec{position:absolute;right:14px;bottom:12px;font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
 .copy{min-width:0}
-.copy h4{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,4.4vw,44px);line-height:1.05;margin:10px 0 0;text-wrap:balance}
-.copy .pull{font-family:var(--f-display);font-style:italic;font-size:19px;line-height:1.45;color:var(--ink-2);margin-top:14px;max-width:44ch}
+.copy h4{font-family:var(--f-display);font-weight:600;letter-spacing:-.02em;font-size:clamp(24px,2.8vw,32px);line-height:1.15;margin:10px 0 0;text-wrap:balance}
+.copy .pull{font-family:var(--f-body);font-size:16.5px;line-height:1.6;color:var(--ink-2);margin-top:10px;max-width:48ch}
 .specs{display:grid;grid-template-columns:1fr 1fr;margin:24px 0 0;border-top:1px solid var(--rule)}
 .specs div{padding:12px 12px 12px 0;border-bottom:1px solid var(--rule);min-width:0}
 .specs div:nth-child(even){padding-left:12px;border-left:1px solid var(--rule)}
 .specs dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
 .specs dd{margin:4px 0 0;font-size:15px;font-weight:500;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.specs dd.mono{font-family:var(--f-body);font-variant-numeric:tabular-nums}
 .copy .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 
 /* Guide */
 .guide-grid{display:grid;gap:40px}
 @media (min-width:960px){.guide-grid{grid-template-columns:.8fr 1.2fr;gap:72px}}
-.guide-grid h2{font-size:clamp(34px,5vw,54px);line-height:1.06}
+.guide-grid h2{font-size:clamp(28px,4vw,44px);line-height:1.15}
 .checks{list-style:none;margin:0;padding:0;counter-reset:c;border-top:1px solid var(--ink)}
 .checks li{display:grid;grid-template-columns:48px 1fr;gap:4px 14px;padding:22px 0;border-bottom:1px solid var(--rule);counter-increment:c}
 .checks li::before{content:counter(c,decimal-leading-zero);font-family:var(--f-mono);font-size:12px;color:var(--gold);padding-top:6px}
-.checks h3{font-size:22px;line-height:1.2}
+.checks h3{font-size:18px;line-height:1.3;font-weight:600;letter-spacing:-.01em}
 .checks p{grid-column:2;font-size:15px;color:var(--ink-2);max-width:62ch}
 
 /* Testimonials */
@@ -200,7 +216,7 @@ section{padding-block:72px}
 .notes-grid{display:grid;gap:20px;margin-top:40px}
 @media (min-width:860px){.notes-grid{grid-template-columns:repeat(3,1fr);gap:28px}}
 blockquote{margin:0;padding:26px 0 0;border-top:1px solid var(--ink);display:flex;flex-direction:column;gap:18px}
-blockquote p{font-family:var(--f-display);font-size:21px;line-height:1.4}
+blockquote p{font-family:var(--f-body);font-size:17px;line-height:1.6}
 blockquote footer{font-size:13px;color:var(--ink-2)}
 blockquote footer b{color:var(--ink);font-weight:600;display:block;font-size:14px}
 .sample{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2)}
@@ -208,8 +224,8 @@ blockquote footer b{color:var(--ink);font-weight:600;display:block;font-size:14p
 /* Visit */
 .visit-grid{display:grid;gap:40px}
 @media (min-width:960px){.visit-grid{grid-template-columns:1fr 1fr;gap:72px;align-items:start}}
-.visit-grid h2{font-size:clamp(36px,5.6vw,60px);line-height:1.04}
-.visit-grid h2 em{font-style:italic;color:var(--gold)}
+.visit-grid h2{font-size:clamp(28px,4.2vw,46px);line-height:1.12}
+.visit-grid h2 em{font-style:normal;color:var(--gold)}
 .contact-list{display:grid;gap:0;margin-top:32px;border-top:1px solid var(--rule)}
 .contact-list div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--rule);font-size:15px}
 .contact-list dt{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding-top:3px}
@@ -319,9 +335,16 @@ blockquote footer b{color:var(--ink);font-weight:600;display:block;font-size:14p
       </div>
     </div>
   </div>
-  <div class="skyline" aria-hidden="true">
-    <svg id="skyline" viewBox="0 0 1200 210" preserveAspectRatio="xMidYMax slice"></svg>
-    <div class="wrap skyline-cap"><span>Sector 94 · Central Noida</span><span>Noida–Greater Noida Expressway</span><span>Sector 150 → Jewar</span></div>
+  <div class="skyline more-r" id="sky">
+    <div class="sky-scroll" id="skyScroll" tabindex="0" role="region" aria-label="Noida skyline from Delhi to Jewar airport. Scroll sideways to explore.">
+      <svg id="skyline" aria-hidden="true"></svg>
+    </div>
+    <span class="sky-fade l" aria-hidden="true"></span><span class="sky-fade r" aria-hidden="true"></span>
+    <div class="wrap sky-bar">
+      <span class="sky-hint" id="skyHint">Drag or swipe · Delhi → Jewar</span>
+      <span class="sky-prog" aria-hidden="true"><i id="skyProg"></i></span>
+      <div class="sky-nav"><button type="button" id="skyPrev" aria-label="Scroll skyline left" disabled>←</button><button type="button" id="skyNext" aria-label="Scroll skyline right">→</button></div>
+    </div>
   </div>
 </section>
 
@@ -372,7 +395,7 @@ blockquote footer b{color:var(--ink);font-weight:600;display:block;font-size:14p
 <section id="markets">
   <div class="wrap">
     <p class="eyebrow">II · Micro-markets</p>
-    <h2 style="font-size:clamp(34px,5.4vw,56px);line-height:1.05;margin-top:16px;max-width:18ch">Four corridors, read from Delhi outwards.</h2>
+    <h2 style="font-size:clamp(28px,4vw,44px);line-height:1.15;margin-top:16px;max-width:20ch">Four corridors, read from Delhi outwards.</h2>
     <div class="mm-grid">
       <div class="map">
         <svg id="map" viewBox="0 0 400 440" role="img" aria-label="Schematic map of Noida corridors from Delhi to Jewar"></svg>
@@ -750,20 +773,84 @@ blockquote footer b{color:var(--ink);font-weight:600;display:block;font-size:14p
     el.outerHTML=fixVars(svg);
   });
 
-  // Hero skyline
+  // Hero skyline: a scrollable journey from Delhi to Jewar
   (function(){
-    var r=rng(4242), W=1200, ground=196, s='';
-    for(var g=0;g<3;g++){s+='<line x1="0" x2="'+W+'" y1="'+(ground+4+g*5)+'" y2="'+(ground+4+g*5)+'" stroke="currentColor" stroke-opacity="'+(.2-g*.06)+'" stroke-width=".7"/>'}
-    var x=8;
-    while(x<W-20){
-      var t=x/W, w=18+r()*30, maxH=t<.35?170:(t<.75?120:70), h=maxH*(.45+r()*.55);
-      if(r()<.18){x+=10+r()*24;continue}
-      s+=tower(x,w,h,ground,7,r,1+Math.floor(r()*3)); x+=w+4+r()*10;
-    }
-    s+='<path d="M'+(W-150)+' 52 q 70 -26 140 -18" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 4"/>';
-    s+='<path d="M'+(W-14)+' 34 l-12 -3 3 4 -3 4z" fill="var(--gold)"/>';
-    s+='<line x1="0" x2="'+W+'" y1="'+ground+'" y2="'+ground+'" stroke="currentColor" stroke-width="1.2"/>';
-    $('#skyline').innerHTML=fixVars(s);
+    var r=rng(4242), VH=260, ground=196, s='';
+    var Z=[
+      {n:'Delhi · DND Flyway',sub:'Start',w:300,kind:'river'},
+      {n:'Sector 18',sub:'Retail & offices',w:340,kind:'mid',h:[70,140]},
+      {n:'Sectors 44 · 50',sub:'Builder floors',w:360,kind:'low'},
+      {n:'Sectors 94 · 97',sub:'Ultra-luxury towers',w:420,kind:'tall',h:[130,178]},
+      {n:'Noida Expressway',sub:'Sectors 124–137',w:520,kind:'mid',h:[80,150]},
+      {n:'Sector 150 belt',sub:'Green, low density',w:520,kind:'green',h:[60,110]},
+      {n:'Greater Noida',sub:'Pari Chowk · Knowledge Park',w:420,kind:'sparse',h:[50,110]},
+      {n:'Yamuna Expressway',sub:'YEIDA plots & villas',w:440,kind:'villa'},
+      {n:'Jewar',sub:'Noida International Airport',w:380,kind:'airport'}
+    ];
+    var pad=48, W=pad*2; Z.forEach(function(z){W+=z.w});
+    function house(x,w){var h=w*.55;return '<rect x="'+x+'" y="'+(ground-h)+'" width="'+w+'" height="'+h+'" fill="var(--paper)" stroke="currentColor" stroke-width="1"/><path d="M'+(x-3)+' '+(ground-h)+' L'+(x+w/2)+' '+(ground-h-w*.38)+' L'+(x+w+3)+' '+(ground-h)+'" fill="var(--paper)" stroke="currentColor" stroke-width="1"/><rect x="'+(x+w*.4)+'" y="'+(ground-h*.55)+'" width="'+(w*.2)+'" height="'+(h*.55)+'" fill="var(--gold)" fill-opacity=".45"/>'}
+    function tree(x,sz){return '<line x1="'+x+'" x2="'+x+'" y1="'+(ground-sz*.8)+'" y2="'+ground+'" stroke="currentColor" stroke-opacity=".5" stroke-width=".8"/><circle cx="'+x+'" cy="'+(ground-sz*1.3)+'" r="'+sz+'" fill="var(--paper-2)" stroke="currentColor" stroke-opacity=".55" stroke-width=".8"/>'}
+    var x=pad;
+    Z.forEach(function(z,zi){
+      var x0=x, x1=x+z.w, cx=x0+16;
+      if(z.kind==='river'){
+        for(var k=0;k<4;k++){s+='<path d="M'+(x0+20)+' '+(ground+8+k*5)+' q 20 -4 40 0 t 40 0 t 40 0 t 40 0 t 40 0" fill="none" stroke="var(--gold)" stroke-opacity="'+(.6-k*.12)+'" stroke-width=".8"/>'}
+        s+='<path d="M'+(x0+10)+' '+(ground-34)+' H'+(x1-20)+'" stroke="currentColor" stroke-width="1.4"/>';
+        for(var pq=x0+30;pq<x1-30;pq+=48){s+='<line x1="'+pq+'" x2="'+pq+'" y1="'+(ground-34)+'" y2="'+ground+'" stroke="currentColor" stroke-width="1"/>'}
+        s+='<rect x="'+(x0+4)+'" y="'+(ground-150)+'" width="40" height="150" fill="var(--paper)" stroke="currentColor" stroke-opacity=".45" stroke-width="1" stroke-dasharray="3 3"/>';
+      } else if(z.kind==='low'){
+        while(cx<x1-40){var w=34+r()*16,h=32+r()*22;s+=tower(cx,w,h,ground,11,r,1);cx+=w+6+r()*8; if(r()<.35){s+=tree(cx+6,7+r()*4);cx+=18}}
+      } else if(z.kind==='villa'){
+        while(cx<x1-40){var vw=28+r()*10;s+=house(cx,vw);cx+=vw+14+r()*10; if(r()<.5){s+=tree(cx,6+r()*4);cx+=16}}
+      } else if(z.kind==='airport'){
+        s+='<rect x="'+(x0+30)+'" y="'+(ground-28)+'" width="190" height="28" fill="var(--paper)" stroke="currentColor" stroke-width="1"/>';
+        for(var gi=0;gi<7;gi++){s+='<line x1="'+(x0+40+gi*26)+'" x2="'+(x0+40+gi*26)+'" y1="'+(ground-28)+'" y2="'+ground+'" stroke="currentColor" stroke-opacity=".35" stroke-width=".7"/>'}
+        s+='<path d="M'+(x0+30)+' '+(ground-28)+' Q '+(x0+125)+' '+(ground-52)+' '+(x0+220)+' '+(ground-28)+'" fill="none" stroke="currentColor" stroke-width="1.2"/>';
+        var tx=x0+260; s+='<rect x="'+tx+'" y="'+(ground-110)+'" width="14" height="110" fill="var(--paper)" stroke="currentColor" stroke-width="1"/><path d="M'+(tx-12)+' '+(ground-110)+' h38 l-6 -18 h-26 z" fill="var(--paper)" stroke="currentColor" stroke-width="1"/><rect x="'+(tx-6)+'" y="'+(ground-126)+'" width="26" height="8" fill="var(--gold)" fill-opacity=".5"/>';
+        s+='<path d="M'+(x0+20)+' 70 q 120 -10 240 30" fill="none" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 4"/>';
+        s+='<g transform="translate('+(x0+262)+' 100) rotate(14)"><path d="M0 0 l-22 -3 -10 -14 -6 1 5 14 -16 -2 -6 -7 -4 1 3 9 -3 9 4 1 6 -7 16 -2 -5 14 6 1 10 -14 22 -3z" fill="var(--gold)" transform="scale(-1 1)"/></g>';
+      } else {
+        var hmin=z.h[0],hmax=z.h[1];
+        while(cx<x1-36){
+          if(z.kind==='sparse'&&r()<.35){s+=tree(cx+8,6+r()*5);cx+=24;continue}
+          if(z.kind==='green'&&r()<.45){s+=tree(cx+8,7+r()*6);cx+=22;continue}
+          var w2=z.kind==='tall'?30+r()*18:20+r()*26, h2=hmin+r()*(hmax-hmin);
+          if(cx+w2>x1-30)break;
+          s+=tower(cx,w2,h2,ground,7,r,1+Math.floor(r()*3)); cx+=w2+(z.kind==='tall'?14:6)+r()*10;
+        }
+        if(z.kind==='green'){s+='<line x1="'+(x1-60)+'" x2="'+(x1-60)+'" y1="'+ground+'" y2="'+(ground-26)+'" stroke="currentColor" stroke-width="1"/><path d="M'+(x1-60)+' '+(ground-26)+' l12 4 -12 4z" fill="var(--gold)"/>'}
+      }
+      // zone label + boundary tick
+      s+='<line x1="'+x0+'" x2="'+x0+'" y1="'+(ground+2)+'" y2="'+(ground+46)+'" stroke="currentColor" stroke-opacity=".25" stroke-width="1"/>';
+      s+='<text x="'+(x0+12)+'" y="'+(ground+26)+'" font-family="var(--f-body)" font-size="13" font-weight="600" fill="var(--ink)">'+z.n+'</text>';
+      s+='<text x="'+(x0+12)+'" y="'+(ground+44)+'" font-family="var(--f-mono)" font-size="10.5" letter-spacing=".6" fill="var(--ink-2)">'+z.sub.toUpperCase()+'</text>';
+      x=x1;
+    });
+    // ground with clear end caps
+    s+='<line x1="'+pad+'" x2="'+(W-pad)+'" y1="'+ground+'" y2="'+ground+'" stroke="currentColor" stroke-width="1.2"/>';
+    [pad,W-pad].forEach(function(ex){s+='<line x1="'+ex+'" x2="'+ex+'" y1="'+(ground-10)+'" y2="'+(ground+46)+'" stroke="var(--gold)" stroke-width="2"/>'});
+    s+='<circle cx="'+(W-pad)+'" cy="'+(ground-10)+'" r="4" fill="var(--gold)"/><circle cx="'+pad+'" cy="'+(ground-10)+'" r="4" fill="var(--gold)"/>';
+    var svg=$('#skyline'); svg.setAttribute('viewBox','0 0 '+W+' '+VH); svg.setAttribute('preserveAspectRatio','xMinYMax meet');
+    svg.innerHTML=fixVars(s);
+    var sc=$('#skyScroll'), sky=$('#sky'), prog=$('#skyProg'), prev=$('#skyPrev'), next=$('#skyNext');
+    function size(){var h=svg.getBoundingClientRect().height||220; svg.style.width=(h*W/VH)+'px'; upd()}
+    function upd(){var max=sc.scrollWidth-sc.clientWidth, x=sc.scrollLeft;
+      sky.classList.toggle('more-l',x>4); sky.classList.toggle('more-r',x<max-4);
+      prev.disabled=x<=4; next.disabled=x>=max-4;
+      var ratio=sc.clientWidth/sc.scrollWidth; prog.style.width=(ratio*100)+'%'; prog.style.left=(max>0?(x/max)*(1-ratio)*100:0)+'%';}
+    sc.addEventListener('scroll',function(){requestAnimationFrame(upd)},{passive:true});
+    window.addEventListener('resize',size);
+    prev.addEventListener('click',function(){sc.scrollBy({left:-sc.clientWidth*.7,behavior:'smooth'})});
+    next.addEventListener('click',function(){sc.scrollBy({left:sc.clientWidth*.7,behavior:'smooth'})});
+    // mouse drag to glide
+    var down=false,sx=0,sl=0,moved=false;
+    sc.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;down=true;moved=false;sx=e.clientX;sl=sc.scrollLeft;sc.classList.add('drag')});
+    window.addEventListener('pointermove',function(e){if(!down)return;var dx=e.clientX-sx;if(Math.abs(dx)>3)moved=true;sc.scrollLeft=sl-dx});
+    window.addEventListener('pointerup',function(){if(!down)return;down=false;sc.classList.remove('drag')});
+    // vertical wheel over the skyline glides it sideways until an end is reached
+    sc.addEventListener('wheel',function(e){if(Math.abs(e.deltaY)<=Math.abs(e.deltaX))return;var max=sc.scrollWidth-sc.clientWidth;
+      if((e.deltaY>0&&sc.scrollLeft<max-1)||(e.deltaY<0&&sc.scrollLeft>1)){e.preventDefault();sc.scrollLeft+=e.deltaY}},{passive:false});
+    size();
   })();
 
   // Schematic map
