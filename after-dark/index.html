@@ -1,0 +1,835 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Altura Realty Noida</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..700&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: dark cinematic single page — night-skyline hero, an interactive corridor map as the centrepiece, glass project cards. Deliberately dark-only. */
+:root{
+  --bg:#0A0D13; --bg-2:#10151F; --bg-3:#161C28;
+  --fg:#ECE6DA; --fg-2:#9BA1AD; --fg-3:#6C7380;
+  --brass:#CBA663; --brass-2:#8E7245; --brass-glow:rgba(203,166,99,.16);
+  --line:rgba(236,230,218,.10); --line-2:rgba(236,230,218,.18);
+  --glass:rgba(22,28,40,.62); --wa:#25B85E; --err:#E58A6F;
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  --maxw:1200px; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+@media (min-width:760px){.wrap{padding-left:max(32px,env(safe-area-inset-left,0px));padding-right:max(32px,env(safe-area-inset-right,0px))}}
+h1,h2,h3,h4{font-family:var(--f-display);font-stretch:118%;font-weight:600;margin:0;text-wrap:balance;letter-spacing:-.015em;text-transform:uppercase}
+p{margin:0}
+.k{font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.lede{font-size:17px;color:var(--fg-2);max-width:58ch}
+section{padding-block:72px}
+@media (min-width:960px){section{padding-block:110px}}
+.sec-head{display:grid;gap:16px;margin-bottom:44px}
+@media (min-width:960px){.sec-head{grid-template-columns:1.1fr 1fr;gap:56px;align-items:end}}
+.sec-head h2{font-size:clamp(30px,5vw,54px);line-height:1}
+.sec-head h2 span{color:var(--brass)}
+:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 14px/1 var(--f-body);letter-spacing:.03em;padding:15px 22px;border-radius:999px;border:1px solid var(--brass);background:var(--brass);color:#14110B;text-decoration:none;cursor:pointer;transition:background .2s,color .2s,box-shadow .2s}
+.btn:hover{box-shadow:0 0 0 6px var(--brass-glow)}
+.btn.ghost{background:transparent;color:var(--fg);border-color:var(--line-2)}
+.btn.ghost:hover{border-color:var(--brass);color:var(--brass);box-shadow:none}
+.btn.sm{padding:10px 16px;font-size:13px}
+
+/* Header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,13,19,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.hdr .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:32px;height:32px;flex:none}
+.logo b{font-family:var(--f-display);font-stretch:125%;font-weight:600;font-size:18px;letter-spacing:.14em}
+.logo small{display:block;font-family:var(--f-mono);font-size:9px;letter-spacing:.22em;color:var(--fg-3);margin-top:2px}
+.nav{display:none;gap:26px;align-items:center}
+.nav a:not(.btn){text-decoration:none;font-size:14px;color:var(--fg-2)}
+.nav a:not(.btn):hover{color:var(--fg)}
+.burger{display:inline-grid;place-items:center;width:44px;height:44px;border:1px solid var(--line-2);border-radius:50%;background:none;color:var(--fg);cursor:pointer}
+.burger svg{width:20px;height:20px}
+@media (min-width:980px){.nav{display:flex}.hdr .burger{display:none}}
+.menu{position:fixed;inset:0;z-index:70;background:var(--bg);display:flex;flex-direction:column;padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.menu-top{display:flex;justify-content:space-between;align-items:center;height:54px}
+.menu nav{display:flex;flex-direction:column;margin-top:36px}
+.menu nav a{font-family:var(--f-display);font-stretch:118%;text-transform:uppercase;font-weight:600;font-size:30px;text-decoration:none;padding:14px 0;border-bottom:1px solid var(--line)}
+.menu-foot{margin-top:auto;display:grid;gap:10px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding-block:0;border-bottom:1px solid var(--line)}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,13,19,.35) 0%,rgba(10,13,19,.55) 45%,rgba(10,13,19,.94) 100%),radial-gradient(60% 50% at 80% 30%,rgba(203,166,99,.10),transparent 70%);pointer-events:none}
+.hero-in{position:relative;z-index:1;display:grid;gap:40px;padding-block:56px 48px}
+@media (min-width:980px){.hero-in{grid-template-columns:1.2fr .85fr;gap:64px;align-items:center;padding-block:96px 72px}}
+.hero h1{font-size:clamp(38px,7.6vw,84px);line-height:.96;margin-top:18px;font-stretch:125%}
+.hero h1 span{color:var(--brass)}
+.hero .lede{margin-top:22px;color:#C2C6CE}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.stats{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+@media (min-width:860px){.stats{grid-template-columns:repeat(4,1fr)}}
+.stat{padding:22px 16px 24px 0;border-bottom:1px solid var(--line)}
+.stat:nth-child(even){padding-left:16px;border-left:1px solid var(--line)}
+@media (min-width:860px){.stat{border-bottom:0}.stat+.stat{border-left:1px solid var(--line);padding-left:24px}}
+.stat b{display:block;font-family:var(--f-display);font-stretch:125%;font-weight:500;font-size:clamp(26px,3.6vw,40px);line-height:1;font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:13px;color:var(--fg-2);margin-top:8px}
+.rise{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}.d1{animation-delay:.1s}.d2{animation-delay:.2s}.d3{animation-delay:.32s}.d4{animation-delay:.44s}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* Glass form */
+.glass{background:var(--glass);border:1px solid var(--line-2);border-radius:20px;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);padding:26px 22px}
+@media (min-width:760px){.glass{padding:32px 30px}}
+.glass h2,.glass h3{font-size:22px;line-height:1.1}
+.glass .sub{font-size:14px;color:var(--fg-2);margin-top:6px}
+.lead-form{display:grid;gap:12px;margin-top:20px}
+.field{display:grid;gap:6px;min-width:0}
+.field label{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
+.field input,.field select,.field textarea{width:100%;font:16px/1.4 var(--f-body);color:var(--fg);background:rgba(255,255,255,.04);border:1px solid var(--line-2);border-radius:12px;padding:12px 14px;-webkit-appearance:none;appearance:none}
+.field select{background-image:linear-gradient(45deg,transparent 50%,var(--fg-2) 50%),linear-gradient(135deg,var(--fg-2) 50%,transparent 50%);background-position:calc(100% - 18px) 52%,calc(100% - 13px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:36px}
+.field select option{background:var(--bg-2);color:var(--fg)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 4px var(--brass-glow)}
+.field textarea{resize:vertical;min-height:72px}
+.row2{display:grid;gap:12px}
+@media (min-width:520px){.row2{grid-template-columns:1fr 1fr}}
+.lead-form .btn{width:100%;margin-top:6px}
+.form-note{font-size:12px;color:var(--fg-3)}
+.form-err{font-size:13px;color:var(--err)}
+.form-ok{margin-top:18px;padding:18px;border:1px solid var(--brass-2);border-radius:14px;background:var(--brass-glow)}
+.form-ok b{font-family:var(--f-display);font-stretch:118%;text-transform:uppercase;font-size:18px;display:block}
+.form-ok p{font-size:14px;color:var(--fg-2);margin-top:6px}
+
+/* Developer ticker */
+.devs{padding-block:26px;border-bottom:1px solid var(--line)}
+.devs .wrap{display:flex;flex-wrap:wrap;gap:12px 40px;align-items:center}
+.devs span.k{color:var(--fg-3)}
+.devs ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px 36px}
+.devs li{font-family:var(--f-display);font-stretch:125%;font-weight:500;font-size:20px;letter-spacing:.12em;color:var(--fg-2)}
+
+/* Corridor map */
+.map-wrap{display:grid;gap:24px}
+@media (min-width:980px){.map-wrap{grid-template-columns:1.25fr 1fr;gap:32px;align-items:stretch}}
+.map-card{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:12px;position:relative;overflow:hidden}
+.map-card svg{display:block;width:100%;height:auto}
+.zone{cursor:pointer}
+.zone .shape{fill:rgba(203,166,99,.06);stroke:rgba(203,166,99,.35);stroke-width:1.2;transition:fill .25s,stroke .25s}
+.zone:hover .shape,.zone:focus-visible .shape{fill:rgba(203,166,99,.14)}
+.zone.on .shape{fill:rgba(203,166,99,.24);stroke:var(--brass);stroke-width:2}
+.zone text{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;fill:var(--fg-2);pointer-events:none}
+.zone.on text{fill:var(--fg)}
+.zone:focus{outline:none}
+.m-road{fill:none;stroke:var(--fg-3);stroke-width:2.2}
+.m-exp{fill:none;stroke:var(--brass);stroke-width:2.6}
+.m-metro{fill:none;stroke:#5A8FD6;stroke-width:2;stroke-dasharray:6 5}
+.m-river{fill:none;stroke:#1E3550;stroke-width:16;stroke-linecap:round}
+.m-lbl{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;fill:var(--fg-3)}
+.m-city{fill:var(--bg-3);stroke:var(--line-2)}
+.m-city-t{font-family:var(--f-display);font-weight:600;font-size:13px;letter-spacing:.12em;fill:var(--fg)}
+.m-air{fill:var(--brass)}
+.pulse{fill:none;stroke:var(--brass);stroke-width:1.5;transform-origin:center;transform-box:fill-box;animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{from{opacity:.9;transform:scale(.6)}to{opacity:0;transform:scale(2.2)}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;padding:10px 8px 4px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.08em;color:var(--fg-3);text-transform:uppercase}
+.legend i{display:inline-block;width:18px;height:0;border-top:2.5px solid var(--brass);vertical-align:middle;margin-right:6px}
+.legend i.m{border-top:2px dashed #5A8FD6}.legend i.r{border-top:2px solid var(--fg-3)}
+.zone-tabs{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px;scrollbar-width:none}
+.zone-tabs::-webkit-scrollbar{display:none}
+.zone-tabs button{flex:none;font:500 13px/1 var(--f-body);color:var(--fg-2);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:10px 14px;cursor:pointer}
+.zone-tabs button[aria-selected="true"]{background:var(--brass);border-color:var(--brass);color:#14110B}
+.panel{background:linear-gradient(180deg,var(--bg-3),var(--bg-2));border:1px solid var(--line);border-radius:20px;padding:26px 22px;display:flex;flex-direction:column;gap:18px;min-width:0}
+@media (min-width:760px){.panel{padding:32px 30px}}
+.panel h3{font-size:clamp(24px,3vw,32px);line-height:1.02}
+.panel .sectors{font-family:var(--f-mono);font-size:12px;color:var(--fg-3);margin-top:8px}
+.panel p.story{color:var(--fg-2);font-size:15.5px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.facts div{background:var(--bg-2);padding:14px;min-width:0}
+.facts dt{font-family:var(--f-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
+.facts dd{margin:6px 0 0;font-size:14.5px;font-weight:500}
+.anchors{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14.5px}
+.anchors li{display:flex;gap:10px;align-items:baseline}
+.anchors li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--brass);transform:translateY(-2px)}
+.panel .btn{align-self:flex-start}
+
+/* Thesis cards */
+.thesis{display:grid;gap:16px}
+@media (min-width:760px){.thesis{grid-template-columns:1fr 1fr}}
+@media (min-width:1100px){.thesis{grid-template-columns:repeat(4,1fr)}}
+.t-card{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:24px 22px 26px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.t-card svg{width:34px;height:34px;color:var(--brass)}
+.t-card h3{font-size:19px;line-height:1.1}
+.t-card p{font-size:15px;color:var(--fg-2)}
+
+/* Projects */
+.dev-row{margin-top:56px}
+.dev-row:first-of-type{margin-top:0}
+.dev-bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:8px 24px;padding-bottom:16px;border-bottom:1px solid var(--line-2);margin-bottom:20px}
+.dev-bar h3{font-size:clamp(26px,4vw,40px);letter-spacing:.06em;font-stretch:125%}
+.dev-bar p{font-size:14.5px;color:var(--fg-2);max-width:56ch}
+.cards{display:grid;gap:18px}
+@media (min-width:860px){.cards{grid-template-columns:1fr 1fr}}
+.p-card{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;min-width:0;transition:border-color .25s}
+.p-card:hover{border-color:var(--brass-2)}
+.p-card.solo{grid-column:1/-1}
+@media (min-width:860px){.p-card.solo{flex-direction:row}.p-card.solo .art-box{flex:1.1;aspect-ratio:auto;min-height:340px}.p-card.solo .p-body{flex:1}}
+.art-box{position:relative;aspect-ratio:16/9;max-width:100%;background:radial-gradient(70% 80% at 70% 20%,#1C2538,#0D1119 70%);border-bottom:1px solid var(--line)}
+.art-box svg{position:absolute;inset:0;width:100%;height:100%}
+.badge{position:absolute;left:14px;top:14px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:999px;background:rgba(10,13,19,.7);border:1px solid var(--line-2);backdrop-filter:blur(6px)}
+.badge.hot{border-color:var(--brass);color:var(--brass)}
+.tw{fill:rgba(16,21,31,.9);stroke:rgba(203,166,99,.75);stroke-width:1}
+.fl{stroke:rgba(203,166,99,.22);stroke-width:.7}
+.lit{fill:#E7C27E;opacity:.8}
+.lit.tw2{animation:twinkle 4s ease-in-out infinite}
+@keyframes twinkle{50%{opacity:.25}}
+.gnd{stroke:rgba(203,166,99,.6);stroke-width:1.2}
+.star{fill:#ECE6DA}
+.p-body{padding:22px 20px 22px;display:flex;flex-direction:column;gap:14px;min-width:0}
+@media (min-width:760px){.p-body{padding:26px 26px}}
+.p-body .where{font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass)}
+.p-body h4{font-size:clamp(22px,2.6vw,28px);line-height:1.04}
+.p-body p.desc{font-size:15px;color:var(--fg-2)}
+.p-specs{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0}
+@media (min-width:520px){.p-specs{grid-template-columns:repeat(3,1fr)}}
+.p-specs div{background:var(--bg-2);padding:11px 12px;min-width:0}
+.p-specs dt{font-family:var(--f-mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3)}
+.p-specs dd{margin:4px 0 0;font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.p-acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:4px}
+
+/* Compare table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px}
+table{width:100%;border-collapse:collapse;min-width:640px;font-size:14.5px}
+th,td{text-align:left;padding:16px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3);font-weight:500;background:var(--bg-2)}
+tbody th{font-family:var(--f-display);font-stretch:118%;text-transform:uppercase;font-size:15px;font-weight:600;color:var(--fg);width:22%}
+td{color:var(--fg-2)}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+.guide-checks{display:grid;gap:14px;margin-top:22px}
+@media (min-width:860px){.guide-checks{grid-template-columns:repeat(3,1fr)}}
+.guide-checks div{border-top:1px solid var(--brass-2);padding-top:14px}
+.guide-checks h4{font-size:15px;letter-spacing:.02em}
+.guide-checks p{font-size:14.5px;color:var(--fg-2);margin-top:6px}
+
+/* Process */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:s}
+@media (min-width:860px){.steps{grid-template-columns:repeat(4,1fr)}}
+.steps li{counter-increment:s;padding:24px 0;border-top:1px solid var(--line-2);display:grid;gap:8px}
+@media (min-width:860px){.steps li{padding:26px 24px 0 0}}
+.steps li::before{content:"Step " counter(s);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.steps h3{font-size:19px}
+.steps p{font-size:15px;color:var(--fg-2)}
+
+/* Quotes */
+.quotes{display:grid;gap:16px}
+@media (min-width:860px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{background:var(--bg-2);border:1px solid var(--line);border-radius:18px;padding:24px 22px;display:flex;flex-direction:column;gap:18px}
+.quote p{font-size:16.5px;line-height:1.55}
+.quote footer{margin-top:auto;font-size:13px;color:var(--fg-3)}
+.quote footer b{display:block;color:var(--fg);font-weight:600;font-size:14px}
+.sample{font-family:var(--f-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+
+/* Final CTA */
+.final{background:radial-gradient(80% 70% at 15% 0%,rgba(203,166,99,.12),transparent 70%),var(--bg-2);border-top:1px solid var(--line)}
+.final-grid{display:grid;gap:36px}
+@media (min-width:980px){.final-grid{grid-template-columns:1fr 1fr;gap:64px;align-items:start}}
+.final h2{font-size:clamp(32px,5.4vw,58px);line-height:.98}
+.final h2 span{color:var(--brass)}
+.clist{display:grid;margin-top:30px;border-top:1px solid var(--line)}
+.clist div{display:grid;grid-template-columns:104px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.clist dt{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-3);padding-top:3px}
+.clist dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.clist a{text-decoration:none;color:var(--brass)}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding-block:40px calc(100px + env(safe-area-inset-bottom,0px))}
+.foot-grid{display:grid;gap:28px}
+@media (min-width:860px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr}}
+.foot h5{font-family:var(--f-mono);font-weight:500;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-3);margin:0 0 10px}
+.foot ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:14px;color:var(--fg-2)}
+.foot ul a{text-decoration:none}
+.disclaim{font-size:12px;color:var(--fg-3);margin-top:30px;padding-top:20px;border-top:1px solid var(--line);line-height:1.6}
+
+/* Floating actions */
+.fab{position:fixed;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column;gap:10px}
+@media (min-width:760px){.fab{right:calc(28px + env(safe-area-inset-right,0px));bottom:calc(28px + env(safe-area-inset-bottom,0px))}}
+.fab a{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;text-decoration:none;box-shadow:0 10px 26px -8px rgba(0,0,0,.7);transition:transform .2s}
+.fab a:hover{transform:translateY(-2px)}
+.fab svg{width:22px;height:22px}
+.fab .call{background:var(--brass);color:#14110B}
+.fab .wa{background:var(--wa);color:#fff}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:80;background:rgba(5,7,10,.7);backdrop-filter:blur(4px);display:grid;place-items:end center}
+@media (min-width:640px){.modal{place-items:center;padding:24px}}
+.modal .glass{width:100%;max-width:460px;position:relative;background:var(--bg-3);max-height:calc(100% - env(safe-area-inset-top,0px));overflow:auto;padding-bottom:calc(26px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0}
+@media (min-width:640px){.modal .glass{border-radius:20px}}
+.close{position:absolute;right:12px;top:12px;width:40px;height:40px;border:1px solid var(--line-2);border-radius:50%;background:none;color:var(--fg);cursor:pointer;font-size:20px;line-height:1}
+</style>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Altura Realty home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 32 L20 7 L36 32" stroke="#CBA663" stroke-width="2"/><path d="M12 32 L20 19 L28 32" stroke="#ECE6DA" stroke-width="1.6"/><path d="M2 35h36" stroke="#CBA663" stroke-width="1.2"/></svg>
+      <span><b>ALTURA</b><small>REALTY · NOIDA</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#corridors">Growth map</a>
+      <a href="#thesis">Why Noida</a>
+      <a href="#projects">Projects</a>
+      <a href="#guide">Investor guide</a>
+      <a class="btn sm" href="#talk">Talk to an advisor</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9h16M4 15h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <div class="menu-top">
+    <span class="logo"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 32 L20 7 L36 32" stroke="#CBA663" stroke-width="2"/><path d="M12 32 L20 19 L28 32" stroke="#ECE6DA" stroke-width="1.6"/></svg><span><b>ALTURA</b></span></span>
+    <button class="burger" id="menuClose" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <nav aria-label="Mobile">
+    <a href="#corridors">Growth map</a>
+    <a href="#thesis">Why Noida</a>
+    <a href="#projects">Projects</a>
+    <a href="#guide">Investor guide</a>
+    <a href="#talk">Contact</a>
+  </nav>
+  <div class="menu-foot">
+    <a class="btn" href="#talk">Talk to an advisor</a>
+    <a class="btn ghost" href="tel:+919811100000">Call +91 98111 00000</a>
+  </div>
+</div>
+
+<main id="top">
+<section class="hero">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="hero-in">
+      <div>
+        <p class="k rise">Noida · Greater Noida · Yamuna Expressway</p>
+        <h1 class="rise d1">Invest where Noida is <span>going next.</span></h1>
+        <p class="lede rise d2">We advise investors and end-users on new launches from Godrej, ATS, M3M and Prestige, with a clear view of which corridor fits your budget, holding period and expected rental.</p>
+        <div class="hero-ctas rise d3">
+          <a class="btn" href="#corridors">Explore the growth map</a>
+          <a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp an advisor</a>
+        </div>
+      </div>
+      <div class="glass rise d4">
+        <h2>Get the investor shortlist</h2>
+        <p class="sub">Three projects matched to your budget, sent on WhatsApp.</p>
+        <form class="lead-form" novalidate>
+          <div class="field"><label for="h-name">Full name</label><input id="h-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="h-phone">Mobile number</label><input id="h-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required></div>
+          <div class="row2">
+            <div class="field"><label for="h-budget">Budget</label><select id="h-budget" name="budget"><option>₹1.5 – 2.5 Cr</option><option>₹2.5 – 4 Cr</option><option>₹4 – 7 Cr</option><option>₹7 Cr +</option></select></div>
+            <div class="field"><label for="h-goal">Goal</label><select id="h-goal" name="goal"><option>Capital growth</option><option>Rental income</option><option>Own use</option><option>NRI investment</option></select></div>
+          </div>
+          <p class="form-err" hidden></p>
+          <button class="btn" type="submit">Send my shortlist</button>
+          <p class="form-note">We’ll contact you by phone or WhatsApp.</p>
+        </form>
+        <div class="form-ok" hidden><b>Thank you.</b><p>An advisor will share your shortlist shortly.</p></div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>₹1,200 Cr+</b><span>Transactions advised</span></div>
+      <div class="stat"><b>18</b><span>Developer partners</span></div>
+      <div class="stat"><b>2,400+</b><span>Families and investors</span></div>
+      <div class="stat"><b>12 yrs</b><span>In the Noida market</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="devs"><div class="wrap"><span class="k">Authorised partner</span><ul><li>GODREJ</li><li>ATS</li><li>M3M</li><li>PRESTIGE</li></ul></div></div>
+
+<!-- Growth map -->
+<section id="corridors">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="k">Growth corridors</p><h2 style="margin-top:14px">Five corridors, <span>five different bets.</span></h2></div>
+      <p class="lede">Noida isn’t one market. Each corridor has its own price level, stage of development and reason to buy. Tap a zone to see what drives it.</p>
+    </div>
+    <div class="map-wrap">
+      <div class="map-card">
+        <div class="zone-tabs" role="tablist" aria-label="Corridors" id="tabs"></div>
+        <svg viewBox="0 0 600 460" role="group" aria-label="Schematic map of Noida growth corridors">
+          <path class="m-river" d="M70 10 C 110 80, 90 150, 140 220 S 210 360, 260 450"/>
+          <text class="m-lbl" x="18" y="60">YAMUNA</text>
+          <rect class="m-city" x="20" y="88" width="96" height="40" rx="8"/><text class="m-city-t" x="68" y="113" text-anchor="middle">DELHI</text>
+          <path class="m-road" d="M116 108 L 190 128"/><text class="m-lbl" x="122" y="100">DND</text>
+          <path class="m-exp" d="M190 140 L 250 210 L 320 300 L 360 350"/>
+          <path class="m-exp" d="M360 350 L 470 410 L 560 430"/>
+          <path class="m-road" d="M320 300 L 430 250 L 520 230"/>
+          <path class="m-metro" d="M190 128 L 300 90 M210 160 L 262 222 L 330 300 L 430 250"/>
+          <text class="m-lbl" x="236" y="264" transform="rotate(52 236 264)">NOIDA–GR. NOIDA EXPY</text>
+          <text class="m-lbl" x="420" y="404" transform="rotate(18 420 404)">YAMUNA EXPY</text>
+
+          <g class="zone" data-z="central" tabindex="0" role="button" aria-label="Central Noida">
+            <path class="shape" d="M160 90 Q 210 66 280 80 Q 300 120 270 150 Q 210 170 168 150 Z"/><text x="194" y="118">CENTRAL</text>
+          </g>
+          <g class="zone" data-z="expressway" tabindex="0" role="button" aria-label="Noida Expressway">
+            <path class="shape" d="M212 170 Q 260 160 300 200 Q 320 250 300 270 Q 255 270 226 230 Q 205 200 212 170 Z"/><text x="228" y="214">EXPRESSWAY</text>
+          </g>
+          <g class="zone" data-z="s150" tabindex="0" role="button" aria-label="Sector 150 belt">
+            <path class="shape" d="M282 282 Q 330 268 362 300 Q 380 340 352 366 Q 306 372 284 334 Q 272 306 282 282 Z"/><text x="290" y="326">SEC 150</text>
+          </g>
+          <g class="zone" data-z="gnoida" tabindex="0" role="button" aria-label="Greater Noida">
+            <path class="shape" d="M396 196 Q 470 176 540 200 Q 560 240 530 266 Q 460 282 412 262 Q 386 230 396 196 Z"/><text x="430" y="234">GR. NOIDA</text>
+          </g>
+          <g class="zone" data-z="yeida" tabindex="0" role="button" aria-label="Yamuna Expressway and Jewar">
+            <path class="shape" d="M400 360 Q 470 350 540 380 Q 580 420 548 448 Q 470 456 420 430 Q 386 400 400 360 Z"/><text x="430" y="398">YEIDA</text>
+          </g>
+          <circle class="pulse" cx="556" cy="430" r="10"/>
+          <path class="m-air" d="M548 432 l16 -6 -2 -3 -7 2 -5 -7 -3 1 3 7 -6 2 -2 -2 -2 1 2 4z"/>
+          <text class="m-lbl" x="520" y="456" style="fill:#CBA663">JEWAR AIRPORT</text>
+        </svg>
+        <div class="legend"><span><i></i>Expressways</span><span><i class="m"></i>Metro (Aqua / Blue)</span><span><i class="r"></i>Arterial roads</span><span>Schematic, not to scale</span></div>
+      </div>
+      <div class="panel" id="panel" aria-live="polite">
+        <div><p class="k" id="pz-k"></p><h3 id="pz-title" style="margin-top:10px"></h3><p class="sectors" id="pz-sec"></p></div>
+        <p class="story" id="pz-story"></p>
+        <dl class="facts" id="pz-facts"></dl>
+        <div><p class="k" style="color:var(--fg-3);margin-bottom:10px">Growth anchors</p><ul class="anchors" id="pz-anchors"></ul></div>
+        <a class="btn" href="#talk" id="pz-cta">Get projects in this corridor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Thesis -->
+<section id="thesis" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="k">Why Noida</p><h2 style="margin-top:14px">The case for <span>Noida</span>, in four parts.</h2></div>
+      <p class="lede">Noida is a planned city run by a development authority. Wide roads, sector-wise zoning and authority-allotted land make it easier to read than most of NCR. Here is what is moving prices.</p>
+    </div>
+    <div class="thesis">
+      <article class="t-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 20l26-9-2-3-9 3-7-8-3 1 4 9-8 3-3-2-2 1 3 5z"/><path d="M3 28h26"/></svg>
+        <h3>Noida International Airport</h3>
+        <p>The airport at Jewar shifts attention south. Land along the Yamuna Expressway is being planned for logistics, industry and housing around it.</p>
+      </article>
+      <article class="t-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 28L14 4M28 28L18 4M16 8v3M16 15v3M16 22v3"/></svg>
+        <h3>Expressways and metro</h3>
+        <p>The Noida–Greater Noida Expressway, DND Flyway and Yamuna Expressway connect to Delhi and beyond. The Aqua Line runs along the Expressway sectors.</p>
+      </article>
+      <article class="t-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="9" width="10" height="19"/><rect x="17" y="4" width="10" height="24"/><path d="M8 13h4M8 17h4M8 21h4M20 8h4M20 12h4M20 16h4M20 20h4"/></svg>
+        <h3>Jobs and data centres</h3>
+        <p>IT parks in Sector 62 and along the Expressway, plus data-centre and electronics investment in Greater Noida, keep rental demand steady.</p>
+      </article>
+      <article class="t-card">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="13" r="6"/><path d="M11 19v9M21 28V16"/><circle cx="21" cy="12" r="4"/><path d="M3 28h26"/></svg>
+        <h3>Space for the price</h3>
+        <p>Compared with Gurugram and South Delhi, Noida still offers larger homes and lower density at similar budgets, especially in the Sector 150 belt.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="k">Featured projects</p><h2 style="margin-top:14px">Six launches we’re <span>advising on.</span></h2></div>
+      <p class="lede">Prices are indicative and move with each release. We share the current price sheet, payment plan and inventory on request.</p>
+    </div>
+
+    <div class="dev-row">
+      <div class="dev-bar"><h3>Godrej</h3><p>Godrej Properties has had several sell-out launches in Noida, and continues to add land in Sectors 146–151 and Greater Noida.</p></div>
+      <div class="cards">
+        <article class="p-card solo">
+          <div class="art-box"><div class="art" data-seed="7" data-n="5" data-h="mid"></div><span class="badge hot">New launch</span></div>
+          <div class="p-body">
+            <p class="where">Sector 146 · Expressway</p>
+            <h4>Godrej, Sector 146</h4>
+            <p class="desc">Large 3 and 4 BHK homes on 12.4 acres near the Expressway metro stations.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>3 &amp; 4 BHK</dd></div>
+              <div><dt>Size</dt><dd class="mono">1,800–3,250 sq ft</dd></div>
+              <div><dt>Price</dt><dd class="mono">₹2.99–5.70 Cr*</dd></div>
+              <div><dt>Possession</dt><dd>Jun 2028</dd></div>
+              <div><dt>UP RERA</dt><dd class="mono">UPRERAPRJ303390</dd></div>
+              <div><dt>Land</dt><dd class="mono">12.4 acres</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="Godrej, Sector 146">Get price sheet</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="dev-row">
+      <div class="dev-bar"><h3>ATS</h3><p>ATS shaped the Sector 150 belt with low-density, green-led projects and has a long Noida delivery record.</p></div>
+      <div class="cards">
+        <article class="p-card">
+          <div class="art-box"><div class="art" data-seed="13" data-n="4" data-h="low"></div><span class="badge">Under construction</span></div>
+          <div class="p-body">
+            <p class="where">Sector 150</p>
+            <h4>ATS Kingston Heath</h4>
+            <p class="desc">Wellness-themed homes beside a 9-hole golf course, two apartments per floor.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>3 &amp; 4 BHK</dd></div>
+              <div><dt>Density</dt><dd class="mono">~17 / acre</dd></div>
+              <div><dt>Price</dt><dd>On request</dd></div>
+              <div><dt>Towers</dt><dd class="mono">9</dd></div>
+              <div><dt>UP RERA</dt><dd class="mono">UPRERAPRJ180413</dd></div>
+              <div><dt>Site</dt><dd class="mono">~30 acres</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="ATS Kingston Heath">Get price sheet</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+        <article class="p-card">
+          <div class="art-box"><div class="art" data-seed="21" data-n="6" data-h="mid"></div><span class="badge">Possession 2026</span></div>
+          <div class="p-body">
+            <p class="where">Sector 150</p>
+            <h4>ATS Le Grandiose</h4>
+            <p class="desc">Near-ready 3 and 4 BHK homes close to the Sector 148 metro station.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>3 &amp; 4 BHK</dd></div>
+              <div><dt>Site</dt><dd class="mono">~20 acres</dd></div>
+              <div><dt>Price</dt><dd class="mono">From ₹1.95 Cr*</dd></div>
+              <div><dt>Possession</dt><dd>Oct 2026</dd></div>
+              <div><dt>UP RERA</dt><dd class="mono">UPRERAPRJ3250</dd></div>
+              <div><dt>Metro</dt><dd>Sector 148</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="ATS Le Grandiose">Get price sheet</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="dev-row">
+      <div class="dev-bar"><h3>M3M</h3><p>M3M’s Noida projects sit in Central Noida, minutes from South Delhi, and lean towards tall, amenity-heavy towers.</p></div>
+      <div class="cards">
+        <article class="p-card">
+          <div class="art-box"><div class="art" data-seed="31" data-n="3" data-h="tall"></div><span class="badge">Under construction</span></div>
+          <div class="p-body">
+            <p class="where">Sector 94 · Central Noida</p>
+            <h4>M3M The Cullinan</h4>
+            <p class="desc">High-rise luxury residences with sky-level amenities at the Delhi border.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>3–5 BHK</dd></div>
+              <div><dt>Type</dt><dd>Mixed-use</dd></div>
+              <div><dt>Price</dt><dd>On request</dd></div>
+              <div><dt>Status</dt><dd>Under constr.</dd></div>
+              <div><dt>UP RERA</dt><dd>On request</dd></div>
+              <div><dt>Access</dt><dd>DND · Kalindi Kunj</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="M3M The Cullinan">Get price sheet</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+        <article class="p-card">
+          <div class="art-box"><div class="art" data-seed="44" data-n="2" data-h="tall"></div><span class="badge hot">New launch</span></div>
+          <div class="p-body">
+            <p class="where">Sector 97 · Central Noida</p>
+            <h4>M3M Jacob &amp; Co Residences</h4>
+            <p class="desc">Branded ultra-luxury residences designed with the jeweller Jacob &amp; Co.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>Ultra-luxury</dd></div>
+              <div><dt>Type</dt><dd>Branded</dd></div>
+              <div><dt>Price</dt><dd>On request</dd></div>
+              <div><dt>Status</dt><dd>New launch</dd></div>
+              <div><dt>UP RERA</dt><dd>On request</dd></div>
+              <div><dt>Access</dt><dd>Expressway start</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="M3M Jacob & Co Residences">Get price sheet</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="dev-row">
+      <div class="dev-bar"><h3>Prestige</h3><p>Prestige Group’s first Noida housing project, developed with ACE Group in the Sector 150 sports city.</p></div>
+      <div class="cards">
+        <article class="p-card solo">
+          <div class="art-box"><div class="art" data-seed="58" data-n="5" data-h="low"></div><span class="badge hot">Pre-launch · EOI open</span></div>
+          <div class="p-body">
+            <p class="where">Sector 150</p>
+            <h4>Prestige Bougainvillea Gardens</h4>
+            <p class="desc">2 and 3 BHK homes at an entry price below most Sector 150 launches.</p>
+            <dl class="p-specs">
+              <div><dt>Homes</dt><dd>2 &amp; 3 BHK</dd></div>
+              <div><dt>Size</dt><dd class="mono">1,300–1,500 sq ft</dd></div>
+              <div><dt>Price</dt><dd class="mono">₹1.8–2.1 Cr*</dd></div>
+              <div><dt>Status</dt><dd>Pre-launch</dd></div>
+              <div><dt>UP RERA</dt><dd>Awaited</dd></div>
+              <div><dt>Partner</dt><dd>ACE Group</dd></div>
+            </dl>
+            <div class="p-acts"><button class="btn" data-project="Prestige Bougainvillea Gardens">Register interest</button><a class="btn ghost" href="https://wa.me/919811100000" target="_blank" rel="noopener">WhatsApp</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Investor guide -->
+<section id="guide" style="background:var(--bg-2);border-block:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="k">Investor guide</p><h2 style="margin-top:14px">Pre-launch, under construction or <span>ready?</span></h2></div>
+      <p class="lede">Each stage trades price against certainty. This is how we explain the choice to first-time Noida investors.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Stage</th><th>Entry price</th><th>Risk</th><th>Payment</th><th>Best for</th></tr></thead>
+        <tbody>
+          <tr><th>Pre-launch / EOI</th><td>Lowest; early-bird pricing</td><td>Highest. RERA and approvals may still be pending</td><td>Refundable EOI, then booking</td><td>Investors with a 5–7 year view</td></tr>
+          <tr><th>Under construction</th><td>Moderate</td><td>Delivery timeline; check the developer’s record</td><td>Construction-linked plans</td><td>Buyers who can wait 2–4 years</td></tr>
+          <tr><th>Ready / near-ready</th><td>Highest</td><td>Lowest. You can inspect the home</td><td>Larger upfront payment</td><td>End-users and rental investors</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="guide-checks">
+      <div><h4>Verify on UP RERA</h4><p>Every phase needs its own registration on up-rera.in. Read the registered possession date, not the brochure’s.</p></div>
+      <div><h4>Know the authority</h4><p>Noida, Greater Noida and YEIDA each allot land on lease. Ask whether the developer’s land dues are clear before you book.</p></div>
+      <div><h4>Compare carpet area</h4><p>Quotes are often on super area. Use RERA carpet area and the all-inclusive cost to compare projects.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Process -->
+<section>
+  <div class="wrap">
+    <div class="sec-head"><div><p class="k">How we work</p><h2 style="margin-top:14px">From first call to <span>registry.</span></h2></div></div>
+    <ol class="steps">
+      <li><h3>Brief</h3><p>A 20-minute call on your budget, goal and timeline.</p></li>
+      <li><h3>Shortlist</h3><p>Two or three projects with price sheets, plans and our notes on each.</p></li>
+      <li><h3>Site visits</h3><p>Visits arranged with the developer’s team, with a car if you need one.</p></li>
+      <li><h3>Booking to registry</h3><p>Help with documents, loan approvals and follow-up until possession.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <p class="k" style="margin-bottom:22px">Client notes</p>
+    <div class="quotes">
+      <div class="quote"><p>“They talked me out of a project I liked and into one with a better delivery record. That was the right call.”</p><footer><b>Karan T.</b>Investor, Sector 150 · <span class="sample">Sample</span></footer></div>
+      <div class="quote"><p>“The corridor-by-corridor breakdown helped me see what my budget would actually buy in each part of Noida.”</p><footer><b>Shalini R.</b>Bought in Sector 146 · <span class="sample">Sample</span></footer></div>
+      <div class="quote"><p>“I live in Singapore. Every document reached me on WhatsApp, and the site visit was done over video.”</p><footer><b>Aman G.</b>NRI investor · <span class="sample">Sample</span></footer></div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final" id="talk">
+  <div class="wrap final-grid">
+    <div>
+      <p class="k">Talk to an advisor</p>
+      <h2 style="margin-top:14px">Tell us the number. <span>We’ll find the address.</span></h2>
+      <p class="lede" style="margin-top:18px">Share your budget and what you want from the investment. An advisor will call back within one working day.</p>
+      <dl class="clist">
+        <div><dt>Call</dt><dd><a href="tel:+919811100000">+91 98111 00000</a></dd></div>
+        <div><dt>WhatsApp</dt><dd><a href="https://wa.me/919811100000" target="_blank" rel="noopener">+91 98111 00000</a></dd></div>
+        <div><dt>Email</dt><dd>advisors@alturarealty.in</dd></div>
+        <div><dt>Office</dt><dd>Tower B, 9th Floor, Sample Business Park, Sector 132, Noida 201304</dd></div>
+        <div><dt>Hours</dt><dd>Mon – Sat, 10am – 7pm</dd></div>
+      </dl>
+    </div>
+    <div class="glass">
+      <h3>Request a callback</h3>
+      <p class="sub">No obligation. We call, we don’t spam.</p>
+      <form class="lead-form" novalidate>
+        <div class="row2">
+          <div class="field"><label for="c-name">Full name</label><input id="c-name" name="name" autocomplete="name" required></div>
+          <div class="field"><label for="c-phone">Mobile number</label><input id="c-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="c-corr">Corridor</label><select id="c-corr" name="corridor"><option>Not sure yet</option><option>Central Noida</option><option>Noida Expressway</option><option>Sector 150 belt</option><option>Greater Noida</option><option>Yamuna Expressway</option></select></div>
+          <div class="field"><label for="c-when">Buying in</label><select id="c-when" name="when"><option>Next 3 months</option><option>3–6 months</option><option>6–12 months</option><option>Just exploring</option></select></div>
+        </div>
+        <div class="field"><label for="c-msg">Message (optional)</label><textarea id="c-msg" name="message" rows="2"></textarea></div>
+        <p class="form-err" hidden></p>
+        <button class="btn" type="submit">Request callback</button>
+      </form>
+      <div class="form-ok" hidden><b>Thank you.</b><p>An advisor will call you within one working day.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="#top" aria-label="Altura Realty home">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M4 32 L20 7 L36 32" stroke="#CBA663" stroke-width="2"/><path d="M12 32 L20 19 L28 32" stroke="#ECE6DA" stroke-width="1.6"/><path d="M2 35h36" stroke="#CBA663" stroke-width="1.2"/></svg>
+          <span><b>ALTURA</b><small>REALTY · NOIDA</small></span>
+        </a>
+        <p style="font-size:14px;color:var(--fg-2);margin-top:14px;max-width:38ch">Real estate advisory and channel partner for Noida, Greater Noida and the Yamuna Expressway.</p>
+      </div>
+      <div><h5>Explore</h5><ul><li><a href="#corridors">Growth map</a></li><li><a href="#thesis">Why Noida</a></li><li><a href="#projects">Projects</a></li><li><a href="#guide">Investor guide</a></li></ul></div>
+      <div><h5>Contact</h5><ul><li><a href="tel:+919811100000">+91 98111 00000</a></li><li>advisors@alturarealty.in</li><li>Sector 132, Noida</li></ul></div>
+    </div>
+    <p class="disclaim">UP RERA Agent Reg. No. UPRERAAGT00000 (placeholder). Business figures shown are placeholders. Project details, prices and possession dates are indicative and based on publicly listed information; * prices exclude taxes and charges. Verify all details with the developer and on up-rera.in before booking. Illustrations are not actual project images. © <span id="yr">2026</span> Altura Realty.</p>
+  </div>
+</footer>
+
+<div class="fab">
+  <a class="wa" href="https://wa.me/919811100000" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5l1.3-3.9A8.5 8.5 0 1 1 8 19.6z"/><path d="M9.2 8.6c.2-.4.5-.5.8-.5h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.6 1.2 1.6 2.1 2.8 2.7l.6-.6c.2-.2.4-.2.6-.1l1.4.7c.2.1.3.3.3.5v.4c0 .4-.2.7-.5.9-.6.4-1.4.5-2.1.2-2.4-.9-4.2-2.7-5.1-5.1-.2-.7-.1-1.5.3-2.1z" fill="currentColor" stroke="none"/></svg>
+  </a>
+  <a class="call" href="tel:+919811100000" aria-label="Call +91 98111 00000">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16.4v2.8a1.9 1.9 0 0 1-2 1.9A18.5 18.5 0 0 1 3 5a1.9 1.9 0 0 1 1.9-2h2.8a1.9 1.9 0 0 1 1.9 1.6c.1.9.4 1.8.7 2.6a1.9 1.9 0 0 1-.4 2L8.7 10.4a15 15 0 0 0 5 5l1.2-1.2a1.9 1.9 0 0 1 2-.4c.8.3 1.7.6 2.6.7a1.9 1.9 0 0 1 1.5 1.9z"/></svg>
+  </a>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="glass" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button class="close" id="modalClose" aria-label="Close">×</button>
+    <p class="k">Price sheet &amp; payment plan</p>
+    <h3 id="m-title" style="margin-top:10px;padding-right:44px">Project</h3>
+    <p class="sub">We’ll send the latest price sheet, floor plans and payment plan on WhatsApp.</p>
+    <form class="lead-form" novalidate>
+      <input type="hidden" name="project" id="m-project">
+      <div class="field"><label for="m-name">Full name</label><input id="m-name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="m-phone">Mobile number</label><input id="m-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91" required></div>
+      <div class="field"><label for="m-goal">Buying for</label><select id="m-goal" name="goal"><option>Investment</option><option>Own use</option><option>Both</option></select></div>
+      <p class="form-err" hidden></p>
+      <button class="btn" type="submit">Send me the details</button>
+    </form>
+    <div class="form-ok" hidden><b>On its way.</b><p>We’ll share the details on WhatsApp shortly.</p></div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  $('#yr').textContent=new Date().getFullYear();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Menu
+  var menu=$('#menu'),burger=$('#burger');
+  function openMenu(){menu.hidden=false;burger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+  function closeMenu(){menu.hidden=true;burger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+  burger.addEventListener('click',openMenu);$('#menuClose').addEventListener('click',closeMenu);
+  $$('#menu a').forEach(function(a){a.addEventListener('click',closeMenu)});
+
+  // Forms
+  $$('.lead-form').forEach(function(f){
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      var err=$('.form-err',f),name=f.elements.name.value.trim(),phone=f.elements.phone.value.replace(/\D/g,'');
+      if(phone.length>10&&phone.indexOf('91')===0)phone=phone.slice(2);
+      if(!name){err.textContent='Please enter your name.';err.hidden=false;f.elements.name.focus();return}
+      if(phone.length!==10){err.textContent='Please enter a 10-digit mobile number.';err.hidden=false;f.elements.phone.focus();return}
+      err.hidden=true;f.hidden=true;var ok=f.nextElementSibling,b=$('b',ok);
+      if(/^Thank you/.test(b.textContent))b.textContent='Thank you, '+name.split(' ')[0]+'.';
+      ok.hidden=false;
+    });
+  });
+
+  // Modal
+  var modal=$('#modal');
+  function openModal(p){var f=$('.lead-form',modal);f.reset();f.hidden=false;$('.form-ok',modal).hidden=true;$('.form-err',modal).hidden=true;$('#m-title').textContent=p;$('#m-project').value=p;modal.hidden=false;document.body.style.overflow='hidden';setTimeout(function(){$('#m-name').focus()},30)}
+  function closeModal(){modal.hidden=true;document.body.style.overflow=''}
+  $$('[data-project]').forEach(function(b){b.addEventListener('click',function(){openModal(b.getAttribute('data-project'))})});
+  $('#modalClose').addEventListener('click',closeModal);
+  modal.addEventListener('click',function(e){if(e.target===modal)closeModal()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeModal();closeMenu()}});
+
+  function rng(seed){var s=seed%2147483647;if(s<=0)s+=2147483646;return function(){s=s*16807%2147483647;return (s-1)/2147483646}}
+
+  // Corridor map
+  var Z={
+    central:{k:'Corridor 01 · Mature, premium',t:'Central Noida',sec:'Sectors 18 · 44 · 94 · 97 · 98',
+      story:'The part of Noida closest to South Delhi, reached by the DND Flyway and Kalindi Kunj. Land is scarce, so new launches here are fewer, taller and more expensive, often with branded interiors.',
+      f:[['Stage','Mature'],['Product','Ultra-luxury high-rise'],['Horizon','Long hold, low supply'],['Best for','Delhi upgraders']],
+      a:['DND Flyway and Kalindi Kunj to South Delhi','Sector 18 retail and Blue Line metro','M3M The Cullinan and Jacob & Co in Sectors 94 and 97']},
+    expressway:{k:'Corridor 02 · Established',t:'Noida Expressway',sec:'Sectors 124 – 137',
+      story:'The office and residential spine of Noida. Most societies here are ready and occupied, which makes it the steadiest rental market in the city.',
+      f:[['Stage','Established'],['Product','3–4 BHK, ready'],['Horizon','Rental yield'],['Best for','Rental investors']],
+      a:['Aqua Line metro along the Expressway','IT and corporate offices in Sectors 125–135','Schools and hospitals already in place']},
+    s150:{k:'Corridor 03 · Growth, green',t:'Sector 150 belt',sec:'Sectors 144 – 152',
+      story:'Planned around sports facilities and large open areas, this is where most new premium supply in Noida is launching. Low density, golf and park views, and a straight run to the airport corridor.',
+      f:[['Stage','Growth'],['Product','Low-density 3–4 BHK'],['Horizon','3–6 years'],['Best for','End-users, growth investors']],
+      a:['Sector 148 metro station (Aqua Line)','Sports City planning with large green areas','Godrej, ATS and Prestige launches in this belt']},
+    gnoida:{k:'Corridor 04 · Value, industrial',t:'Greater Noida',sec:'Knowledge Park · Pari Chowk · DMIC township',
+      story:'Wider roads and lower prices than Noida, with a growing base of data centres, electronics manufacturing and universities. Large developers are buying land here again.',
+      f:[['Stage','Emerging'],['Product','Mid-premium group housing'],['Horizon','5+ years'],['Best for','Value investors']],
+      a:['DMIC integrated industrial township','Eastern Peripheral Expressway access','Data-centre and electronics investment']},
+    yeida:{k:'Corridor 05 · Early, airport-led',t:'Yamuna Expressway & Jewar',sec:'YEIDA sectors towards Jewar',
+      story:'The airport corridor. Development is at an earlier stage, with authority plots, townships and planned industrial clusters around Noida International Airport.',
+      f:[['Stage','Early'],['Product','Plots, villas, townships'],['Horizon','7+ years'],['Best for','Patient capital']],
+      a:['Noida International Airport at Jewar','Yamuna Expressway to Agra','Planned Film City and industrial sectors']}
+  };
+  var order=['central','expressway','s150','gnoida','yeida'],labels={central:'Central',expressway:'Expressway',s150:'Sector 150',gnoida:'Greater Noida',yeida:'Yamuna Expy'};
+  var tabs=$('#tabs');
+  order.forEach(function(id){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.dataset.z=id;b.textContent=labels[id];b.addEventListener('click',function(){pick(id)});tabs.appendChild(b)});
+  function pick(id){
+    var d=Z[id];
+    $$('.zone').forEach(function(g){g.classList.toggle('on',g.dataset.z===id);g.setAttribute('aria-pressed',g.dataset.z===id)});
+    $$('#tabs button').forEach(function(b){b.setAttribute('aria-selected',b.dataset.z===id)});
+    $('#pz-k').textContent=d.k;$('#pz-title').textContent=d.t;$('#pz-sec').textContent=d.sec;$('#pz-story').textContent=d.story;
+    $('#pz-facts').innerHTML=d.f.map(function(x){return '<div><dt>'+x[0]+'</dt><dd>'+x[1]+'</dd></div>'}).join('');
+    $('#pz-anchors').innerHTML=d.a.map(function(x){return '<li>'+x+'</li>'}).join('');
+    var sel=$('#c-corr');for(var i=0;i<sel.options.length;i++){if(sel.options[i].text.indexOf(d.t.split(' &')[0].split(' belt')[0])===0){sel.selectedIndex=i}}
+  }
+  $$('.zone').forEach(function(g){g.addEventListener('click',function(){pick(g.dataset.z)});g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(g.dataset.z)}})});
+  pick('s150');
+
+  // Project art
+  $$('.art').forEach(function(el){
+    var r=rng(+el.dataset.seed*613),W=480,H=270,ground=238,n=+el.dataset.n,ht=el.dataset.h,s='<svg viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid slice" aria-hidden="true">';
+    for(var i=0;i<40;i++){s+='<circle class="star" cx="'+(r()*W).toFixed(1)+'" cy="'+(r()*140).toFixed(1)+'" r="'+(r()*0.9+0.3).toFixed(2)+'" opacity="'+(r()*0.5+0.2).toFixed(2)+'"/>'}
+    var m=50,gap=ht==='tall'?30:16,base=(W-m*2-gap*(n-1))/n,x=m;
+    for(var t=0;t<n;t++){
+      var w=base*(.8+r()*.3),h=ht==='tall'?150+r()*60:ht==='low'?80+r()*55:110+r()*70;if(x+w>W-m)w=W-m-x;
+      var top=ground-h,fh=ht==='low'?11:9,cols=Math.max(2,Math.round(w/13));
+      s+='<rect class="tw" x="'+x.toFixed(1)+'" y="'+top.toFixed(1)+'" width="'+w.toFixed(1)+'" height="'+h.toFixed(1)+'"/>';
+      for(var y=top+fh;y<ground-2;y+=fh){s+='<line class="fl" x1="'+x.toFixed(1)+'" x2="'+(x+w).toFixed(1)+'" y1="'+y.toFixed(1)+'" y2="'+y.toFixed(1)+'"/>';
+        for(var c=0;c<cols;c++){if(r()<.16){var cw=w/cols;s+='<rect class="lit'+(r()<.2?' tw2':'')+'" style="animation-delay:'+(r()*4).toFixed(2)+'s" x="'+(x+c*cw+1.5).toFixed(1)+'" y="'+(y-fh+2).toFixed(1)+'" width="'+(cw-3).toFixed(1)+'" height="'+(fh-4).toFixed(1)+'"/>'}}}
+      x+=w+gap;
+    }
+    s+='<line class="gnd" x1="0" x2="'+W+'" y1="'+ground+'" y2="'+ground+'"/></svg>';
+    el.outerHTML=s;
+  });
+
+  // Hero night skyline canvas
+  (function(){
+    var cv=$('#sky'),ctx=cv.getContext('2d'),blds=[],stars=[],W=0,H=0,dpr=1;
+    function build(){
+      var rect=cv.getBoundingClientRect();dpr=Math.min(window.devicePixelRatio||1,2);W=rect.width;H=rect.height;
+      cv.width=Math.round(W*dpr);cv.height=Math.round(H*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);
+      var r=rng(2026);blds=[];stars=[];
+      for(var i=0;i<120;i++)stars.push([r()*W,r()*H*.5,r()*1.1+.2,r()]);
+      [[.55,.42,'#0E131C'],[.35,.62,'#121927']].forEach(function(layer,li){
+        var x=-10;while(x<W+10){var w=26+r()*58,h=H*layer[0]*(.35+r()*.75),win=[];var fh=li?9:7,cw=li?9:7;
+          for(var yy=H-h+8;yy<H-6;yy+=fh)for(var xx=x+4;xx<x+w-cw;xx+=cw+3)if(r()<(li?.13:.08))win.push([xx,yy,r()]);
+          blds.push({x:x,w:w,h:h,c:layer[2],win:win,li:li});x+=w+(r()<.3?r()*20:2)}
+      });
+    }
+    function draw(t){
+      ctx.clearRect(0,0,W,H);
+      var g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#070A10');g.addColorStop(.7,'#101724');g.addColorStop(1,'#1A1F28');ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+      var hz=ctx.createRadialGradient(W*.75,H*.95,10,W*.75,H*.95,W*.6);hz.addColorStop(0,'rgba(203,166,99,.22)');hz.addColorStop(1,'rgba(203,166,99,0)');ctx.fillStyle=hz;ctx.fillRect(0,0,W,H);
+      stars.forEach(function(s){ctx.globalAlpha=.25+.45*(.5+.5*Math.sin(t/900+s[3]*20));ctx.fillStyle='#ECE6DA';ctx.beginPath();ctx.arc(s[0],s[1],s[2],0,6.283);ctx.fill()});
+      ctx.globalAlpha=1;
+      blds.forEach(function(b){ctx.fillStyle=b.c;ctx.fillRect(b.x,H-b.h,b.w,b.h);
+        b.win.forEach(function(w){var a=.35+.55*(.5+.5*Math.sin(t/(1400+w[2]*2600)+w[2]*40));ctx.fillStyle='rgba(231,194,126,'+(b.li?a:a*.5).toFixed(3)+')';ctx.fillRect(w[0],w[1],b.li?6:4,b.li?5:4)})});
+    }
+    var last=0,raf;
+    function loop(t){if(t-last>66){draw(t);last=t}raf=requestAnimationFrame(loop)}
+    build();draw(0);
+    if(!reduce)raf=requestAnimationFrame(loop);
+    var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build();draw(performance.now())},150)});
+  })();
+})();
+</script>
+</body></html>

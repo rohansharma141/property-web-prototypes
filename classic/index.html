@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crestway Realty Noida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F5F7FB; --paper:#FFFFFF; --ink:#0B1B3A; --ink-2:#3A4A6A; --mute:#6F7C99;
+    --line:#DCE3F0; --navy:#0F2B5C; --navy-deep:#081A3C; --blue:#2F6BFF; --blue-soft:#E8EFFF;
+    --glow:rgba(47,107,255,.35); --wa:#25A55A; --wa-deep:#128C4A; --gold:#C8A96A;
+    --hero-text:#FFFFFF; --hero-sub:#B9C6E4;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B1428; --paper:#111C36; --ink:#EEF2FA; --ink-2:#C5CEE3; --mute:#8C98B8;
+      --line:#223257; --navy:#EEF2FA; --navy-deep:#060E22; --blue:#5B8BFF; --blue-soft:#15254A;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1428; --paper:#111C36; --ink:#EEF2FA; --ink-2:#C5CEE3; --mute:#8C98B8;
+    --line:#223257; --navy:#EEF2FA; --navy-deep:#060E22; --blue:#5B8BFF; --blue-soft:#15254A;
+  }
+  html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);height:100%}
+  @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+  *,*::before,*::after{box-sizing:inherit}
+  body{margin:0;min-height:100%;background:var(--bg);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;padding-bottom:64px}
+  @media (min-width:900px){body{padding-bottom:0}}
+  h1,h2,h3{font-family:"DM Sans",system-ui,sans-serif;font-weight:600;line-height:1.12;margin:0;letter-spacing:-.022em}
+  h1{font-size:clamp(2.1rem,6.4vw,3.9rem);line-height:1.06}
+  h2{font-size:clamp(1.65rem,4.2vw,2.5rem)}
+  h3{font-size:1.25rem}
+  p{margin:0}
+  a{color:inherit}
+  .num{font-family:"DM Sans",system-ui,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+  .wrap{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+  section{padding:4rem 0}
+  @media (min-width:800px){section{padding:6rem 0}}
+  .lede{color:var(--ink-2);max-width:58ch;font-size:1.05rem;margin-top:.9rem}
+  .sec-cta{margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+  .link{font-weight:500;color:var(--blue);text-decoration:none}
+  .link:hover{text-decoration:underline}
+
+  /* buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.8rem 1.25rem;border-radius:8px;font:inherit;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;cursor:pointer;line-height:1;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+  .btn:active{transform:translateY(1px)}
+  .btn-primary{background:var(--blue);color:#fff;box-shadow:0 0 0 1px rgba(47,107,255,.25),0 10px 28px -8px var(--glow)}
+  .btn-primary:hover{background:#245BE6;box-shadow:0 0 0 1px rgba(47,107,255,.35),0 14px 32px -8px var(--glow)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--blue);color:var(--blue)}
+  .btn-light{background:#fff;color:#0F2B5C;box-shadow:0 0 0 1px rgba(255,255,255,.4),0 10px 28px -8px rgba(0,0,0,.5)}
+  .btn-light:hover{background:#EEF2FA;color:#0F2B5C}
+  .btn-wa{background:var(--wa-deep);color:#fff}
+  .btn-wa:hover{background:#0E7A3E}
+  .btn svg{width:18px;height:18px;flex:none}
+  .ic{width:40px;height:40px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--ink);background:var(--paper);text-decoration:none;transition:all .15s ease}
+  .ic svg{width:18px;height:18px}
+  .ic:hover{border-color:var(--blue);color:var(--blue)}
+  .ic.wa{color:#fff;background:var(--wa-deep);border-color:var(--wa-deep)}
+  .ic.wa:hover{background:#0E7A3E}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+
+  /* header */
+  .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-weight:600;font-size:.98rem;letter-spacing:-.01em;color:var(--ink);white-space:nowrap;min-width:0}
+  .brand>span:last-child{line-height:1.15}
+  .brand .mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--navy),#1E4FB8);display:grid;place-items:center;color:#fff;box-shadow:0 6px 16px -6px var(--glow);flex:none}
+  .brand .mark svg{width:20px;height:20px}
+  .brand small{display:block;font-weight:400;color:var(--mute);font-size:.7rem;letter-spacing:.02em;line-height:1.1}
+  @media (max-width:380px){.brand small{display:none}.brand{font-size:.92rem}}
+  .nav ul{display:none;list-style:none;gap:1.5rem;margin:0;padding:0;font-size:.95rem;font-weight:500}
+  .nav ul a{text-decoration:none;color:var(--ink-2);padding:.3rem 0;border-bottom:2px solid transparent}
+  .nav ul a[aria-current="page"]{color:var(--ink);border-color:var(--blue)}
+  .nav ul a:hover{color:var(--ink)}
+  @media (min-width:900px){.nav ul{display:flex}}
+  .nav .acts{display:flex;align-items:center;gap:.5rem}
+  .nav .acts .btn{display:none}
+  @media (min-width:900px){.nav .acts .btn{display:inline-flex}}
+
+  /* bottom tabs (mobile) */
+  .tabs{position:fixed;left:0;right:0;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);background:color-mix(in srgb,var(--paper) 94%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+  .tabs a{display:flex;flex-direction:column;align-items:center;gap:.2rem;padding:.55rem 0 .5rem;font-size:.68rem;font-weight:500;color:var(--mute);text-decoration:none}
+  .tabs a svg{width:22px;height:22px}
+  .tabs a[aria-current="page"]{color:var(--blue)}
+  @media (min-width:900px){.tabs{display:none}}
+
+  /* pages */
+  .page{display:none}
+  .page.on{display:block}
+
+  /* hero */
+  .hero{background:radial-gradient(1100px 600px at 80% -10%,rgba(47,107,255,.45),transparent 60%),radial-gradient(700px 400px at 0% 110%,rgba(200,169,106,.16),transparent 60%),linear-gradient(180deg,var(--navy-deep),#0F2B5C 70%,#123573);color:var(--hero-text);padding:3.5rem 0 0;overflow:hidden;position:relative}
+  .hero .wrap{display:grid;gap:2rem;position:relative}
+  @media (min-width:900px){.hero{padding-top:5rem}.hero .wrap{grid-template-columns:1.05fr 1fr;align-items:end}}
+  .hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+  .hero h1 em{font-style:normal;color:#fff}
+  .hero .lede{color:var(--hero-sub);font-size:1.08rem}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem;align-items:center}
+  .hero .cta .btn-ghost{border-color:rgba(255,255,255,.28);color:#fff}
+  .hero .cta .btn-ghost:hover{border-color:#fff}
+  .hero .contact-line{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .6rem;margin-top:1.5rem;color:var(--hero-sub);font-size:.95rem}
+  .hero .contact-line .num{color:#fff;font-weight:600;font-size:1.1rem;text-decoration:none;white-space:nowrap}
+  .hero .contact-line .ic{width:34px;height:34px;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+  .hero .contact-line .ic.wa{background:var(--wa-deep);border-color:var(--wa-deep)}
+  .hero-art{align-self:center}
+  .hero-art svg{display:block;width:100%;height:auto}
+  .hero-photo{border-radius:16px;aspect-ratio:4/3;margin-bottom:1.5rem;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 30px 60px -20px rgba(0,0,0,.6)}
+  .hero-photo svg{position:absolute;inset:0;height:100%;width:100%}
+  .hero-photo::after{background:linear-gradient(180deg,rgba(8,26,60,.05),rgba(8,26,60,.35))}
+  @media (min-width:900px){.hero-photo{margin-bottom:2.5rem}}
+  .hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid rgba(255,255,255,.14);margin-top:2.6rem;padding:1.4rem 0 1.8rem}
+  .hero-stats div{font-size:.85rem;color:var(--hero-sub)}
+  .hero-stats strong{display:block;font-size:1.5rem;font-weight:600;color:#fff;line-height:1.1;margin-bottom:.15rem}
+  @media (min-width:900px){.hero-stats{grid-template-columns:repeat(3,auto);gap:3rem;width:fit-content}}
+
+  /* illustration frames */
+  .art{position:relative;overflow:hidden;background:linear-gradient(160deg,#0E2A5C,#1E4FB8 60%,#3B7BFF);color:#fff}
+  .art svg{display:block;width:100%;height:100%}
+  .art.t2{background:linear-gradient(160deg,#0B2149,#254C9A 60%,#6E96E8)}
+  .art.t3{background:linear-gradient(160deg,#13294E,#2B5FA6 55%,#8FB2F0)}
+  .art.t4{background:linear-gradient(160deg,#101F3E,#2E4F8A 55%,#5F86D6)}
+  .art .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .art::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,26,60,0) 55%,rgba(8,26,60,.45));pointer-events:none}
+  .art .pill,.art .cap{z-index:2}
+  .art .cap{position:absolute;left:.7rem;bottom:.6rem;font-size:.7rem;background:rgba(0,0,0,.35);padding:.25rem .5rem;border-radius:4px;backdrop-filter:blur(4px)}
+
+  /* segments */
+  .seg-grid{display:grid;gap:1rem;margin-top:2.2rem}
+  @media (min-width:640px){.seg-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1000px){.seg-grid{grid-template-columns:repeat(4,1fr)}}
+  .seg{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s ease,border-color .2s ease}
+  .seg:hover{border-color:rgba(47,107,255,.5);box-shadow:0 18px 40px -20px var(--glow)}
+  .seg .art{aspect-ratio:16/10}
+  .seg .body{padding:1.15rem 1.2rem 1.25rem;display:flex;flex-direction:column;gap:.35rem;flex:1}
+  .seg h3{font-size:1.2rem}
+  .seg p{color:var(--ink-2);font-size:.94rem}
+  .seg .foot{margin-top:auto;padding-top:.9rem;display:flex;justify-content:space-between;align-items:center;font-size:.9rem}
+  .seg .foot b{color:var(--blue);font-weight:600}
+
+  /* listings */
+  .grid3{display:grid;gap:1.1rem;margin-top:2rem}
+  @media (min-width:640px){.grid3{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1000px){.grid3{grid-template-columns:repeat(3,1fr)}}
+  .lst{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s ease,border-color .2s ease}
+  .lst:hover{border-color:rgba(47,107,255,.5);box-shadow:0 18px 40px -20px var(--glow)}
+  .lst .art{aspect-ratio:4/3}
+  .lst .pill{position:absolute;top:.7rem;left:.7rem;font-size:.72rem;font-weight:600;background:rgba(255,255,255,.94);color:#0F2B5C;padding:.3rem .55rem;border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+  .lst .body{padding:1rem 1.15rem 1.15rem;display:flex;flex-direction:column;gap:.3rem;flex:1}
+  .lst .price{font-weight:700;font-size:1.25rem;color:var(--ink)}
+  .lst .title{font-weight:500;color:var(--ink)}
+  .lst .meta{color:var(--mute);font-size:.9rem}
+  .lst .acts{display:flex;gap:.5rem;margin-top:auto;padding-top:.9rem;align-items:center}
+  .lst .acts .btn{padding:.6rem .9rem;font-size:.88rem;flex:1}
+  .lst .acts .ic{width:38px;height:38px}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:1rem}
+  .tag{display:inline-block;font-size:.76rem;font-weight:500;padding:.3rem .6rem;border-radius:6px;background:var(--blue-soft);color:var(--blue)}
+  .filters{display:flex;flex-wrap:nowrap;gap:.4rem;margin-top:.5rem;overflow-x:auto;padding:.15rem 0 .35rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .filters::-webkit-scrollbar{display:none}
+  .filters .chip{flex:none;white-space:nowrap}
+  .page[data-page="listings"] section{padding-top:1.25rem}
+  .lst-head h2{font-size:1.55rem}
+  .count{color:var(--mute);font-size:.9rem;margin:.15rem 0 .5rem}
+  .count b{color:var(--ink);font-weight:600}
+  #all-listings{margin-top:.9rem}
+  .chip{font:inherit;font-size:.86rem;font-weight:500;padding:.45rem .8rem;border-radius:999px;border:1px solid var(--line);background:var(--paper);color:var(--ink-2);cursor:pointer;transition:all .15s ease}
+  .chip:hover{border-color:var(--blue);color:var(--blue)}
+  .chip[aria-pressed="true"]{background:var(--navy);color:#fff;border-color:var(--navy);box-shadow:0 8px 20px -10px var(--glow)}
+  :root:not([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue)}
+  .empty{padding:2.5rem 1rem;text-align:center;color:var(--mute);border:1px dashed var(--line);border-radius:14px;margin-top:2rem}
+
+  /* areas */
+  .band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .band-blue{background:var(--blue-soft)}
+  .area-grid{display:grid;gap:1rem;margin-top:2.2rem}
+  @media (min-width:800px){.area-grid{grid-template-columns:repeat(2,1fr)}}
+  .area{background:var(--paper);border:1px solid var(--line);border-radius:14px;display:grid;grid-template-columns:120px 1fr;overflow:hidden;transition:box-shadow .2s ease,border-color .2s ease}
+  .area:hover{border-color:rgba(47,107,255,.5);box-shadow:0 18px 40px -20px var(--glow)}
+  @media (min-width:640px){.area{grid-template-columns:160px 1fr}}
+  .area .art{min-height:100%}
+  .area .body{padding:1.1rem 1.2rem}
+  .area h3{font-size:1.15rem;margin-bottom:.3rem}
+  .area p{color:var(--ink-2);font-size:.93rem}
+  .area .row{display:flex;justify-content:space-between;align-items:center;gap:.5rem;margin-top:.8rem;font-size:.86rem;color:var(--mute)}
+  .area .row b{color:var(--blue);font-weight:600}
+
+  /* steps */
+  .steps{counter-reset:s;list-style:none;padding:0;margin:2.2rem 0 0;display:grid;gap:1.25rem}
+  @media (min-width:800px){.steps{grid-template-columns:repeat(4,1fr)}}
+  .steps li{counter-increment:s;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.2rem 1.4rem;position:relative}
+  .steps li::before{content:counter(s);position:absolute;top:1.1rem;right:1.1rem;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:.9rem}
+  .steps h3{font-size:1.15rem;margin-bottom:.35rem;padding-right:2.5rem}
+  .steps p{color:var(--ink-2);font-size:.94rem}
+
+  /* quotes */
+  .quotes{display:grid;gap:1rem;margin-top:2.2rem}
+  @media (min-width:800px){.quotes{grid-template-columns:repeat(3,1fr)}}
+  .q{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.3rem}
+  .q p{font-size:1.05rem;line-height:1.5;color:var(--ink)}
+  .q footer{margin-top:1rem;font-size:.88rem;color:var(--mute)}
+  .q footer b{color:var(--ink-2);font-weight:500;display:block}
+
+  /* offices */
+  .off-grid{display:grid;gap:1rem;margin-top:2.2rem}
+  @media (min-width:800px){.off-grid{grid-template-columns:1fr 1fr}}
+  .off{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:1.4rem 1.3rem}
+  .off h3{margin-bottom:.4rem}
+  .off p{color:var(--ink-2)}
+  .off .addr{margin:.4rem 0 .8rem;line-height:1.5}
+  .off .num{font-weight:600;color:var(--ink);text-decoration:none;font-size:1.05rem}
+  .off .row{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1rem;align-items:center}
+
+  /* contact bar */
+  .cbar{background:radial-gradient(800px 400px at 90% 0%,rgba(47,107,255,.5),transparent 60%),linear-gradient(180deg,#0F2B5C,var(--navy-deep));color:#fff}
+  .cbar h2{color:#fff}
+  .cbar .lede{color:var(--hero-sub)}
+  .cbar .wrap{display:grid;gap:1.6rem}
+  @media (min-width:800px){.cbar .wrap{grid-template-columns:1.2fr 1fr;align-items:center}}
+  .cbar .num{font-size:clamp(1.5rem,5vw,2.1rem);font-weight:700;color:#fff;text-decoration:none;display:inline-block;margin-top:.8rem}
+  .cbar .row{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center}
+  .cbar .btn-ghost{border-color:rgba(255,255,255,.3);color:#fff}
+
+  /* about */
+  .about-grid{display:grid;gap:2rem;margin-top:2rem}
+  @media (min-width:900px){.about-grid{grid-template-columns:1.1fr .9fr;align-items:start}}
+  .about-grid .art{aspect-ratio:4/3;border-radius:14px}
+  .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.6rem}
+  .facts div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem}
+  .facts strong{display:block;font-size:1.5rem;font-weight:700;color:var(--ink)}
+  .facts span{font-size:.86rem;color:var(--mute)}
+  .prose{color:var(--ink-2);display:grid;gap:1rem;max-width:60ch}
+
+  /* lead form */
+  .form-wrap{display:grid;gap:2rem;margin-top:2rem}
+  @media (min-width:900px){.form-wrap{grid-template-columns:1.2fr 1fr;align-items:start}}
+  .form{background:var(--paper);border:1.5px solid rgba(47,107,255,.5);border-radius:16px;padding:1.5rem;box-shadow:0 0 0 5px rgba(47,107,255,.09),0 30px 60px -30px var(--glow)}
+  .form h3{font-size:1.3rem;margin-bottom:.3rem}
+  .form .sub{color:var(--mute);font-size:.9rem;margin-bottom:1.4rem}
+  .fs{border:0;padding:0;margin:0 0 1.25rem}
+  .fs legend{font-size:.9rem;font-weight:500;color:var(--ink-2);margin-bottom:.55rem;padding:0}
+  .fs .req{color:var(--blue)}
+  .grid2{display:grid;gap:.9rem}
+  @media (min-width:560px){.grid2{grid-template-columns:1fr 1fr}}
+  .fld{display:grid;gap:.35rem}
+  .fld label{font-size:.88rem;font-weight:500;color:var(--ink-2)}
+  .fld input,.fld select,.fld textarea{font:inherit;padding:.8rem .9rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%;transition:border-color .15s ease,box-shadow .15s ease}
+  .fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,107,255,.18);outline:none}
+  .fld textarea{min-height:100px;resize:vertical}
+  .fld .err{font-size:.8rem;color:#C0392B;display:none}
+  .fld.bad input{border-color:#C0392B}
+  .fld.bad .err{display:block}
+  .chips{display:flex;flex-wrap:wrap;gap:.45rem}
+  .form .btn{width:100%;padding:.95rem}
+  .form .fine{font-size:.8rem;color:var(--mute);text-align:center;margin-top:.8rem}
+  .why{display:grid;gap:1rem}
+  .why .item{display:grid;grid-template-columns:44px 1fr;gap:.9rem;align-items:start}
+  .why .item span{width:44px;height:44px;border-radius:12px;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center}
+  .why .item span svg{width:22px;height:22px}
+  .why h3{font-size:1.1rem;margin-bottom:.2rem}
+  .why p{color:var(--ink-2);font-size:.94rem}
+  .done{display:none;text-align:center;padding:1.5rem .5rem}
+  .done.on{display:block}
+  .done .ok{width:64px;height:64px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center;margin:0 auto 1rem}
+  .done .ok svg{width:30px;height:30px}
+  .done h3{font-size:1.4rem;margin-bottom:.4rem}
+  .done p{color:var(--ink-2)}
+  .done .row{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem;margin-top:1.2rem}
+  .done .btn{width:auto}
+
+  footer.site{padding:2.5rem 0 3rem;border-top:1px solid var(--line);color:var(--mute);font-size:.88rem}
+  footer.site .wrap{display:grid;gap:1.2rem}
+  @media (min-width:800px){footer.site .wrap{grid-template-columns:1fr auto;align-items:start}}
+  footer.site a{text-decoration:none;color:var(--ink-2)}
+  footer.site .links{display:flex;flex-wrap:wrap;gap:1.2rem}
+  .proto{background:var(--navy-deep);color:#B9C6E4;font-size:.78rem;text-align:center;padding:.45rem .8rem}
+  .proto b{color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- reusable illustrations -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <pattern id="win" width="14" height="18" patternUnits="userSpaceOnUse"><rect x="3" y="4" width="8" height="10" fill="#fff" opacity=".55"/></pattern>
+    <pattern id="win2" width="22" height="26" patternUnits="userSpaceOnUse"><rect x="4" y="6" width="14" height="14" fill="#fff" opacity=".42"/></pattern>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#fff" stroke-opacity=".2"/></pattern>
+    <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity=".02"/></linearGradient>
+    <radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+
+    <symbol id="il-skyline" viewBox="0 0 800 420">
+      <circle cx="600" cy="120" r="150" fill="url(#sun)" opacity=".35"/>
+      <circle cx="600" cy="120" r="26" fill="#fff" opacity=".9"/>
+      <g opacity=".22" fill="#fff">
+        <rect x="40" y="220" width="70" height="200"/><rect x="130" y="180" width="50" height="240"/><rect x="620" y="200" width="60" height="220"/><rect x="700" y="240" width="80" height="180"/>
+      </g>
+      <g>
+        <rect x="200" y="120" width="110" height="300" fill="#fff" opacity=".18"/><rect x="200" y="120" width="110" height="300" fill="url(#win)"/>
+        <rect x="330" y="60" width="90" height="360" fill="#fff" opacity=".2"/><rect x="330" y="60" width="90" height="360" fill="url(#win)"/>
+        <rect x="440" y="150" width="130" height="270" fill="#fff" opacity=".16"/><rect x="440" y="150" width="130" height="270" fill="url(#win2)"/>
+        <rect x="325" y="52" width="100" height="8" fill="#fff" opacity=".7"/>
+        <rect x="195" y="112" width="120" height="8" fill="#fff" opacity=".6"/>
+        <rect x="435" y="142" width="140" height="8" fill="#fff" opacity=".6"/>
+      </g>
+      <g fill="#fff" opacity=".85">
+        <circle cx="70" cy="380" r="26"/><circle cx="120" cy="392" r="18"/><circle cx="740" cy="384" r="24"/><circle cx="690" cy="396" r="16"/>
+        <rect x="66" y="380" width="8" height="40"/><rect x="736" y="384" width="8" height="36"/>
+      </g>
+      <rect x="0" y="405" width="800" height="15" fill="#fff" opacity=".9"/>
+      <g stroke="#0F2B5C" stroke-width="3" stroke-dasharray="22 16" opacity=".6"><path d="M0 412H800"/></g>
+    </symbol>
+
+    <symbol id="il-tower" viewBox="0 0 400 300">
+      <rect width="400" height="300" fill="url(#grid)"/>
+      <circle cx="320" cy="70" r="70" fill="url(#sun)" opacity=".4"/>
+      <rect x="90" y="40" width="120" height="260" fill="#fff" opacity=".16"/><rect x="90" y="40" width="120" height="260" fill="url(#win2)"/>
+      <rect x="230" y="110" width="90" height="190" fill="#fff" opacity=".14"/><rect x="230" y="110" width="90" height="190" fill="url(#win)"/>
+      <rect x="84" y="32" width="132" height="8" fill="#fff" opacity=".8"/>
+      <g fill="#fff" opacity=".7"><rect x="82" y="90" width="136" height="3"/><rect x="82" y="150" width="136" height="3"/><rect x="82" y="210" width="136" height="3"/></g>
+      <g fill="#fff" opacity=".9"><circle cx="40" cy="262" r="22"/><circle cx="360" cy="270" r="16"/><rect x="37" y="262" width="6" height="38"/></g>
+      <rect x="0" y="292" width="400" height="8" fill="#fff" opacity=".85"/>
+    </symbol>
+
+    <symbol id="il-floor" viewBox="0 0 400 300">
+      <rect width="400" height="300" fill="url(#grid)"/>
+      <circle cx="330" cy="60" r="60" fill="url(#sun)" opacity=".4"/>
+      <rect x="70" y="70" width="240" height="222" fill="#fff" opacity=".14"/>
+      <rect x="62" y="62" width="256" height="10" fill="#fff" opacity=".85"/>
+      <g fill="#fff" opacity=".55">
+        <rect x="90" y="92" width="60" height="38"/><rect x="170" y="92" width="60" height="38"/><rect x="250" y="92" width="40" height="38"/>
+        <rect x="90" y="152" width="60" height="38"/><rect x="170" y="152" width="60" height="38"/><rect x="250" y="152" width="40" height="38"/>
+        <rect x="90" y="212" width="60" height="38"/><rect x="170" y="212" width="60" height="38"/>
+      </g>
+      <g fill="#fff" opacity=".75"><rect x="70" y="140" width="240" height="4"/><rect x="70" y="200" width="240" height="4"/></g>
+      <rect x="248" y="228" width="44" height="64" fill="#fff" opacity=".3"/>
+      <g fill="#fff" opacity=".9"><circle cx="352" cy="256" r="24"/><rect x="349" y="256" width="6" height="36"/><circle cx="36" cy="268" r="16"/><rect x="33" y="268" width="6" height="24"/></g>
+      <rect x="0" y="292" width="400" height="8" fill="#fff" opacity=".85"/>
+    </symbol>
+
+    <symbol id="il-villa" viewBox="0 0 400 300">
+      <rect width="400" height="300" fill="url(#grid)"/>
+      <circle cx="80" cy="70" r="60" fill="url(#sun)" opacity=".4"/>
+      <path d="M60 170 L200 80 L340 170 Z" fill="#fff" opacity=".85"/>
+      <rect x="90" y="170" width="220" height="122" fill="#fff" opacity=".16"/>
+      <rect x="120" y="190" width="50" height="40" fill="#fff" opacity=".6"/><rect x="230" y="190" width="50" height="40" fill="#fff" opacity=".6"/>
+      <rect x="182" y="222" width="36" height="70" fill="#fff" opacity=".7"/>
+      <rect x="250" y="100" width="18" height="40" fill="#fff" opacity=".8"/>
+      <g fill="#fff" opacity=".9"><circle cx="40" cy="240" r="30"/><rect x="36" y="240" width="8" height="52"/><circle cx="366" cy="250" r="24"/><rect x="363" y="250" width="6" height="42"/></g>
+      <rect x="0" y="292" width="400" height="8" fill="#fff" opacity=".85"/>
+    </symbol>
+
+    <symbol id="il-plot" viewBox="0 0 400 300">
+      <rect width="400" height="300" fill="url(#grid)"/>
+      <g stroke="#fff" stroke-opacity=".8" stroke-width="10" fill="none"><path d="M0 100H400M0 210H400M120 0V300M280 0V300"/></g>
+      <rect x="140" y="118" width="120" height="74" fill="#fff" opacity=".45"/>
+      <rect x="150" y="128" width="100" height="54" fill="none" stroke="#fff" stroke-dasharray="6 5" stroke-opacity=".9"/>
+      <g fill="#fff" opacity=".8"><circle cx="40" cy="45" r="14"/><circle cx="70" cy="60" r="10"/><circle cx="330" cy="250" r="14"/><circle cx="360" cy="235" r="10"/></g>
+      <g fill="#fff" opacity=".35"><rect x="10" y="120" width="90" height="70"/><rect x="300" y="120" width="90" height="70"/><rect x="140" y="20" width="120" height="60"/></g>
+    </symbol>
+
+    <symbol id="il-team" viewBox="0 0 400 300">
+      <rect width="400" height="300" fill="url(#grid)"/>
+      <rect x="40" y="40" width="320" height="220" rx="10" fill="#fff" opacity=".12"/>
+      <g fill="#fff" opacity=".85"><circle cx="130" cy="130" r="30"/><path d="M70 230c0-40 27-64 60-64s60 24 60 64z"/></g>
+      <g fill="#fff" opacity=".6"><circle cx="250" cy="120" r="26"/><path d="M200 220c0-36 22-58 50-58s50 22 50 58z"/></g>
+      <g fill="#fff" opacity=".85"><rect x="290" y="150" width="60" height="80" rx="4"/><rect x="298" y="160" width="44" height="4"/><rect x="298" y="172" width="44" height="4"/><rect x="298" y="184" width="30" height="4"/></g>
+    </symbol>
+
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-call" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 11 12 3l9 8M5 10v10h5v-6h4v6h5V10"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4zM4 12h16M12 5v14"/></symbol>
+    <symbol id="i-map" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s-6-5.5-6-11a6 6 0 0 1 12 0c0 5.5-6 11-6 11Z"/><circle cx="12" cy="10" r="2.2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5M12 8h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-form" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6 3h9l4 4v14H6zM15 3v4h4M9 12h6M9 16h6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="m5 12 5 5L19 7"/></symbol>
+    <symbol id="i-dir" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3l9 9-9 9-9-9zM10 12h5l-2-2M15 12l-2 2"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="14" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m11 11 9-9M17 5l2 2M14 8l2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  </defs>
+</svg>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#/home">
+      <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+      <span>Crestway Realty<small>Noida</small></span>
+    </a>
+    <ul>
+      <li><a href="#/home" data-nav="home">Home</a></li>
+      <li><a href="#/areas" data-nav="areas">Areas</a></li>
+      <li><a href="#/about" data-nav="about">About</a></li>
+    </ul>
+    <div class="acts">
+      <a class="ic" href="tel:+919800000000" aria-label="Call" title="Call"><svg><use href="#i-call"/></svg></a>
+      <a class="ic wa" href="https://wa.me/919800000000?text=Hi%2C%20I%27m%20looking%20for%20a%20property%20in%20Noida." target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      <a class="btn btn-primary" href="#/enquire">Enquire</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HOME ============ -->
+<div class="page" data-page="home">
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Premium homes in Noida</h1>
+      <p class="lede">Apartments, builder floors, villas and plots from ₹1.5 to ₹10 crore across Central Noida, the Noida Expressway, Sector 150 and the Yamuna Expressway. We shortlist, take you to site, negotiate and see the paperwork through.</p>
+      <div class="cta">
+        <a class="btn btn-light" href="#/enquire">Tell us what you need</a>
+        <a class="btn btn-ghost" href="#/areas">Read the area guides</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong class="num">₹1.5–10 Cr</strong>price band</div>
+        <div><strong class="num">5</strong>micro-markets</div>
+        <div><strong class="num">Sector 63</strong>office</div>
+      </div>
+    </div>
+    <div class="hero-art"><div class="art hero-photo"><svg viewBox="0 0 800 420" role="img" aria-label="Noida skyline illustration"><use href="#il-skyline"/></svg><img class="ph" src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=70&auto=format&fit=crop" alt="" onerror="this.remove()"></div></div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <h2>What we sell</h2>
+    <p class="lede">Four kinds of property, all in the premium band, all in Noida and Greater Noida.</p>
+    <div class="seg-grid">
+      <a class="seg" href="#/enquire" style="text-decoration:none">
+        <div class="art"><svg viewBox="0 0 400 300"><use href="#il-floor"/></svg><img class="ph" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=700&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="body"><h3>Builder floors</h3><p>Independent floors in established sectors such as 15A, 44 and 50, with stilt parking, lift and terrace rights.</p><div class="foot"><b class="num">₹2–8 Cr</b><span class="link">Ask about floors</span></div></div>
+      </a>
+      <a class="seg" href="#/enquire" style="text-decoration:none">
+        <div class="art t2"><svg viewBox="0 0 400 300"><use href="#il-tower"/></svg><img class="ph" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="body"><h3>Apartments</h3><p>3, 4 and 5 BHK in gated towers on the Noida Expressway, Sector 150 and Central Noida, new launch to ready.</p><div class="foot"><b class="num">₹1.5–10 Cr</b><span class="link">Ask about apartments</span></div></div>
+      </a>
+      <a class="seg" href="#/enquire" style="text-decoration:none">
+        <div class="art t3"><svg viewBox="0 0 400 300"><use href="#il-villa"/></svg><img class="ph" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="body"><h3>Villas</h3><p>Independent and row villas in gated townships in Greater Noida and along the Yamuna Expressway.</p><div class="foot"><b class="num">₹3–10 Cr</b><span class="link">Ask about villas</span></div></div>
+      </a>
+      <a class="seg" href="#/enquire" style="text-decoration:none">
+        <div class="art t4"><svg viewBox="0 0 400 300"><use href="#il-plot"/></svg><img class="ph" src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=700&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()"></div>
+        <div class="body"><h3>Plots</h3><p>Authority and township plots in Greater Noida and YEIDA, 150 to 500 sq m, with lease deed and possession checked.</p><div class="foot"><b class="num">₹1.5–6 Cr</b><span class="link">Ask about plots</span></div></div>
+      </a>
+    </div>
+    <div class="sec-cta"><a class="btn btn-primary" href="#/enquire">Not sure which? Let us shortlist for you</a></div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Featured this month</h2><p class="lede">A few of what we're currently showing. Inventory moves quickly — ask for what's new.</p></div>
+      <span class="tag">Sample listings</span>
+    </div>
+    <div class="grid3" id="featured"></div>
+    <div class="sec-cta">
+      <a class="btn btn-primary" href="#/enquire">Ask for the full list</a>
+      <a class="btn btn-ghost" href="https://wa.me/919800000000?text=What%27s%20new%20this%20week%3F" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Ask what's new</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Where we work</h2>
+    <p class="lede">Five micro-markets we know sector by sector. Each behaves differently on price, supply and who's buying.</p>
+    <div class="area-grid" id="areas-home"></div>
+    <div class="sec-cta"><a class="btn btn-ghost" href="#/areas">Read the area guides</a></div>
+  </div>
+</section>
+
+<section class="band-blue">
+  <div class="wrap">
+    <h2>How a purchase works with us</h2>
+    <p class="lede">Most clients go from first call to registry in six to ten weeks.</p>
+    <ol class="steps">
+      <li><h3>Shortlist</h3><p>You give us the brief. We come back with three to five options that actually match, with honest notes on each.</p></li>
+      <li><h3>Site visits</h3><p>We take you to every shortlisted property at your pace and tell you what we'd worry about.</p></li>
+      <li><h3>Negotiate</h3><p>We handle the back-and-forth with the seller or developer and get the number to where it should be.</p></li>
+      <li><h3>Paperwork</h3><p>Title check, agreement, loan coordination if needed, and registry at the sub-registrar's office.</p></li>
+    </ol>
+    <div class="sec-cta">
+      <a class="btn btn-primary" href="tel:+919800000000"><svg><use href="#i-call"/></svg>Start with a call</a>
+      <a class="btn btn-ghost" href="#/enquire">Or send your brief</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>What clients say</h2><p class="lede">Real reviews will replace these once the Google profile is live.</p></div>
+      <span class="tag">Sample quotes</span>
+    </div>
+    <div class="quotes">
+      <div class="q"><p>They showed us four floors, told us which two to skip and why, and we closed on the third in five weeks.</p><footer><b>R. Malhotra</b>Builder floor, Sector 50</footer></div>
+      <div class="q"><p>The negotiation alone paid for itself. We got a better price than the developer's own sales team had offered.</p><footer><b>A. and P. Khanna</b>Apartment, Sector 150</footer></div>
+      <div class="q"><p>I'm in Dubai. Everything from site videos to registry was handled on WhatsApp and one power of attorney.</p><footer><b>S. Bhatia</b>Villa, Yamuna Expressway</footer></div>
+    </div>
+    <div class="sec-cta"><a class="btn btn-ghost" href="#/about">More about the team</a></div>
+  </div>
+</section>
+
+<section class="band" id="offices">
+  <div class="wrap">
+    <h2>Visit us in Sector 63</h2>
+    <p class="lede">Come in for a chat or ask us to meet you at the site.</p>
+    <div class="off-grid">
+      <div class="off">
+        <h3>Sector 63, Noida</h3>
+        <p class="addr">Office 214, 2nd Floor, Tower B, Plot B-48<br>Sector 63, Noida, Uttar Pradesh 201301</p>
+        <p style="font-size:.92rem">Mon–Sat 10 am to 7 pm · Sunday by appointment</p>
+        <div class="row">
+          <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Sector+63+Noida" target="_blank" rel="noopener"><svg><use href="#i-dir"/></svg>Directions</a>
+          <a class="ic" href="tel:+919800000000" aria-label="Call"><svg><use href="#i-call"/></svg></a>
+          <a class="ic wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <div class="off">
+        <h3>Site visits across Noida</h3>
+        <p class="addr">We meet you at the project<br>Central Noida to the Yamuna Expressway</p>
+        <p style="font-size:.92rem">Usually within 48 hours of your call</p>
+        <div class="row">
+          <a class="btn btn-ghost" href="#/enquire"><svg><use href="#i-clock"/></svg>Book a visit</a>
+          <a class="ic wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cbar">
+  <div class="wrap">
+    <div>
+      <h2>Ready when you are</h2>
+      <p class="lede">One call reaches the person who'll actually handle your search.</p>
+    </div>
+    <div class="row">
+      <a class="btn btn-light" href="#/enquire">Send your requirement</a>
+      <a class="ic wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      <a class="ic" style="background:transparent;border-color:rgba(255,255,255,.3);color:#fff" href="tel:+919800000000" aria-label="Call"><svg><use href="#i-call"/></svg></a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ AREAS ============ -->
+<div class="page" data-page="areas">
+<section>
+  <div class="wrap">
+    <h2>Area guides</h2>
+    <p class="lede">A short, honest read on each micro-market — who buys there, what it costs, and what to watch for.</p>
+    <div class="area-grid" id="areas-all"></div>
+    <div class="sec-cta">
+      <a class="btn btn-primary" href="#/enquire">Ask which area fits your brief</a>
+      <a class="btn btn-ghost" href="#/home">Back to home</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<div class="page" data-page="about">
+<section>
+  <div class="wrap">
+    <h2>A small team that shows up</h2>
+    <div class="about-grid">
+      <div class="prose">
+        <p>Crestway Realty is a small advisory team working from our office in Sector 63, Noida. We work in the premium band, from ₹1.5 crore up, and only in micro-markets we visit every week.</p>
+        <p>That focus is the whole point. We don't list everything; we list what we'd be comfortable recommending to a friend, and we say plainly when a property isn't worth your time.</p>
+        <p>Buyers get a shortlist, site visits, negotiation and paperwork. Sellers get a realistic price, serious buyers only, and a quiet sale. NRIs get the same service over WhatsApp, video and a single power of attorney.</p>
+        <div class="facts">
+          <div><strong class="num">₹1.5–10 Cr</strong><span>the band we work in</span></div>
+          <div><strong class="num">5</strong><span>micro-markets, visited weekly</span></div>
+          <div><strong class="num">1</strong><span>office in Sector 63, Noida</span></div>
+          <div><strong class="num">UP RERA</strong><span>registration no. to be added</span></div>
+        </div>
+      </div>
+      <div>
+        <div class="art t2"><svg viewBox="0 0 400 300"><use href="#il-team"/></svg><img class="ph" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=900&q=70&auto=format&fit=crop" alt="" loading="lazy" onerror="this.remove()"><span class="cap">Sample photo</span></div>
+      </div>
+    </div>
+    <div class="sec-cta">
+      <a class="btn btn-primary" href="tel:+919800000000"><svg><use href="#i-call"/></svg>Speak to us</a>
+      <a class="btn btn-ghost" href="#/enquire">Send a requirement</a>
+    </div>
+  </div>
+</section>
+<section class="band-blue">
+  <div class="wrap">
+    <h2>What working with us looks like</h2>
+    <div class="why" style="margin-top:1.8rem;max-width:640px">
+      <div class="item"><span><svg><use href="#i-shield"/></svg></span><div><h3>Verified inventory</h3><p>Every project is one we've visited ourselves, with title and approvals checked before it goes on the shortlist.</p></div></div>
+      <div class="item"><span><svg><use href="#i-clock"/></svg></span><div><h3>Same-day replies</h3><p>WhatsApp during working hours gets a reply within the hour. Site visits usually within 48 hours.</p></div></div>
+      <div class="item"><span><svg><use href="#i-key"/></svg></span><div><h3>Through to the keys</h3><p>Negotiation, agreement, loan coordination and registry — one point of contact from start to possession.</p></div></div>
+    </div>
+    <div class="sec-cta"><a class="btn btn-primary" href="#/enquire">Start a conversation</a></div>
+  </div>
+</section>
+</div>
+
+<!-- ============ ENQUIRE ============ -->
+<div class="page" data-page="enquire">
+<section>
+  <div class="wrap">
+    <h2>Tell us what you're looking for</h2>
+    <p class="lede">Two minutes. We'll call you back within the hour on working days, or you can push it straight to WhatsApp.</p>
+    <div class="form-wrap">
+      <form class="form" id="lead" novalidate>
+        <div id="lead-fields">
+          <h3>Your requirement</h3>
+          <p class="sub">Fields marked <span style="color:var(--blue)">•</span> are required.</p>
+
+          <fieldset class="fs"><legend>I want to <span class="req">•</span></legend>
+            <div class="chips" data-single="intent">
+              <button type="button" class="chip" aria-pressed="true">Buy</button><button type="button" class="chip" aria-pressed="false">Sell</button><button type="button" class="chip" aria-pressed="false">Invest</button><button type="button" class="chip" aria-pressed="false">Rent out</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs"><legend>Property type</legend>
+            <div class="chips" data-multi="type">
+              <button type="button" class="chip" aria-pressed="false">Builder floor</button><button type="button" class="chip" aria-pressed="false">Apartment</button><button type="button" class="chip" aria-pressed="false">Villa</button><button type="button" class="chip" aria-pressed="false">Plot</button><button type="button" class="chip" aria-pressed="false">Commercial</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs"><legend>Budget</legend>
+            <div class="chips" data-single="budget">
+              <button type="button" class="chip" aria-pressed="false">₹1.5–3 Cr</button><button type="button" class="chip" aria-pressed="false">₹3–5 Cr</button><button type="button" class="chip" aria-pressed="false">₹5–8 Cr</button><button type="button" class="chip" aria-pressed="false">₹8 Cr +</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs"><legend>Preferred areas</legend>
+            <div class="chips" data-multi="area">
+              <button type="button" class="chip" aria-pressed="false">Central Noida</button><button type="button" class="chip" aria-pressed="false">Noida Expressway</button><button type="button" class="chip" aria-pressed="false">Sector 150</button><button type="button" class="chip" aria-pressed="false">Greater Noida West</button><button type="button" class="chip" aria-pressed="false">Yamuna Expressway</button><button type="button" class="chip" aria-pressed="false">Open to suggestions</button>
+            </div>
+          </fieldset>
+
+          <fieldset class="fs"><legend>When</legend>
+            <div class="chips" data-single="when">
+              <button type="button" class="chip" aria-pressed="false">This month</button><button type="button" class="chip" aria-pressed="false">1–3 months</button><button type="button" class="chip" aria-pressed="false">3–6 months</button><button type="button" class="chip" aria-pressed="false">Just exploring</button>
+            </div>
+          </fieldset>
+
+          <div class="grid2">
+            <div class="fld"><label for="l-name">Name <span style="color:var(--blue)">•</span></label><input id="l-name" name="name" autocomplete="name" placeholder="Your name"><span class="err">Please add your name.</span></div>
+            <div class="fld"><label for="l-phone">Mobile <span style="color:var(--blue)">•</span></label><input id="l-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="+91 98xxx xxxxx" class="num"><span class="err">Enter a 10-digit mobile number.</span></div>
+          </div>
+          <div class="fld" style="margin-top:.9rem"><label for="l-email">Email <span style="color:var(--mute);font-weight:400">(optional)</span></label><input id="l-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+          <div class="fld" style="margin-top:.9rem"><label for="l-msg">Anything else</label><textarea id="l-msg" name="msg" placeholder="Bedrooms, floor preference, a project you already like, NRI, loan needed…"></textarea></div>
+
+          <div style="margin-top:1.3rem;display:grid;gap:.6rem">
+            <button type="submit" class="btn btn-primary">Send requirement</button>
+            <button type="button" class="btn btn-wa" id="lead-wa"><svg><use href="#i-wa"/></svg>Send on WhatsApp instead</button>
+          </div>
+          <p class="fine">We'll only use this to contact you about your search.</p>
+        </div>
+
+        <div class="done" id="lead-done">
+          <div class="ok"><svg><use href="#i-check"/></svg></div>
+          <h3>Got it. We'll call you shortly.</h3>
+          <p id="done-text">Expect a call within the hour on working days.</p>
+          <div class="row">
+            <a class="btn btn-wa" id="done-wa" href="#" target="_blank" rel="noopener"><svg><use href="#i-wa"/></svg>Also send on WhatsApp</a>
+            <a class="btn btn-ghost" href="#/areas">Read the area guides</a>
+          </div>
+        </div>
+      </form>
+
+      <div class="why">
+        <div class="item"><span><svg><use href="#i-shield"/></svg></span><div><h3>No spam, no lists</h3><p>Your number goes to one person at Crestway, not a call centre.</p></div></div>
+        <div class="item"><span><svg><use href="#i-clock"/></svg></span><div><h3>A real reply, fast</h3><p>You'll hear from us with two or three options, not a brochure.</p></div></div>
+        <div class="item"><span><svg><use href="#i-key"/></svg></span><div><h3>Sellers welcome too</h3><p>If you're selling, choose "Sell" below and we'll come to value it.</p></div></div>
+        <div style="margin-top:.5rem;display:flex;gap:.6rem;align-items:center;color:var(--mute);font-size:.92rem">
+          <a class="ic" href="tel:+919800000000" aria-label="Call"><svg><use href="#i-call"/></svg></a>
+          <a class="ic wa" href="https://wa.me/919800000000" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+          <span>Prefer to talk? Call or WhatsApp us.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <div style="color:var(--ink);font-weight:600;font-size:1rem">Crestway Realty</div>
+      <div>Office 214, Tower B, Plot B-48, Sector 63, Noida 201301 · UP RERA registration no. to be added</div>
+      <div style="margin-top:.5rem">© 2026 Crestway Realty. Prices are indicative and subject to change. Photos are stock placeholders.</div>
+    </div>
+    <div class="links">
+      <a href="#/areas">Areas</a>
+      <a href="#/about">About</a>
+      <a href="#/enquire">Enquire</a>
+    </div>
+  </div>
+</footer>
+
+<nav class="tabs" aria-label="Sections">
+  <a href="#/home" data-nav="home"><svg><use href="#i-home"/></svg>Home</a>
+  <a href="#/areas" data-nav="areas"><svg><use href="#i-map"/></svg>Areas</a>
+  <a href="#/about" data-nav="about"><svg><use href="#i-info"/></svg>About</a>
+  <a href="#/enquire" data-nav="enquire"><svg><use href="#i-form"/></svg>Enquire</a>
+</nav>
+
+<script>
+(function(){
+  var PHONE="919800000000";
+  var LISTINGS=[
+    {p:2.4,t:"Apartment",title:"3 BHK, park facing, low-density tower",area:"Sector 150",meta:"Sector 150 · 1,950 sq ft · mid floor",tag:"Ready to move",art:"il-tower",c:"",img:"https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=900&q=70&auto=format&fit=crop"},
+    {p:4.1,t:"Apartment",title:"4 BHK + servant, golf view",area:"Noida Expressway",meta:"Sector 128 · 3,300 sq ft · high floor",tag:"Ready to move",art:"il-tower",c:"t2",img:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=900&q=70&auto=format&fit=crop"},
+    {p:3.2,t:"Builder floor",title:"4 BHK builder floor with terrace",area:"Central Noida",meta:"Sector 50 · 300 sq m plot · 2nd floor",tag:"Ready to move",art:"il-floor",c:"t3",img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=70&auto=format&fit=crop"},
+    {p:6.8,t:"Apartment",title:"5 BHK sky residence, new launch",area:"Central Noida",meta:"Sector 94 · 5,200 sq ft · possession 2029",tag:"New launch",art:"il-tower",c:"t4",img:"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900&q=70&auto=format&fit=crop"},
+    {p:3.6,t:"Villa",title:"Row villa in gated township",area:"Yamuna Expressway",meta:"YEIDA Sector 22D · 4 BHK · 240 sq m",tag:"Near-ready",art:"il-villa",c:"t2",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&q=70&auto=format&fit=crop"},
+    {p:1.9,t:"Plot",title:"Residential plot, 18 m road",area:"Greater Noida",meta:"Greater Noida · 200 sq m · lease deed ready",tag:"Clear title",art:"il-plot",c:"",img:"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=900&q=70&auto=format&fit=crop"}
+  ];
+
+  var AREAS=[
+    {n:"Central Noida",d:"Sectors 44, 50, 94 and 97, closest to South Delhi via the DND. Established builder floors alongside the newest ultra-luxury towers.",k:"Apartments, builder floors",art:"il-tower",c:"",img:"https://images.unsplash.com/photo-1613977257363-707ba9348227?w=700&q=70&auto=format&fit=crop"},
+    {n:"Noida Expressway",d:"Sectors 124–137 along the Expressway and Aqua Line. Ready gated societies near offices and schools, with steady rental demand.",k:"Apartments",art:"il-tower",c:"t2",img:"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=70&auto=format&fit=crop"},
+    {n:"Sector 150 belt",d:"Noida's greenest belt, planned around sports and open space. Most new premium launches are here, with low density and golf views.",k:"Apartments, new launches",art:"il-floor",c:"t3",img:"https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=700&q=70&auto=format&fit=crop"},
+    {n:"Greater Noida",d:"Wider roads and lower prices, with townships, authority plots and growing data-centre and industrial investment nearby.",k:"Apartments, plots",art:"il-plot",c:"t4",img:"https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=70&auto=format&fit=crop"},
+    {n:"Yamuna Expressway",d:"The corridor to Noida International Airport at Jewar. Villas, plots and townships for buyers with a longer view.",k:"Villas, plots",art:"il-villa",c:"",img:"https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=70&auto=format&fit=crop"}
+  ];
+
+  function wa(msg,num){return "https://wa.me/"+(num||PHONE)+"?text="+encodeURIComponent(msg);}
+  function card(l){
+    var m=wa("I'd like details on: "+l.title+" ("+l.meta+").");
+    return '<article class="lst"><div class="art '+l.c+'"><svg viewBox="0 0 400 300"><use href="#'+l.art+'"/></svg><img class="ph" src="'+l.img+'" alt="" loading="lazy" onerror="this.remove()"><span class="pill">'+l.tag+'</span></div>'+
+      '<div class="body"><div class="price num">₹'+l.p+' Cr</div><div class="title">'+l.title+'</div><div class="meta">'+l.meta+'</div>'+
+      '<div class="acts"><a class="btn btn-primary" href="#/enquire">Enquire</a><a class="ic wa" href="'+m+'" target="_blank" rel="noopener" aria-label="WhatsApp about this"><svg><use href="#i-wa"/></svg></a><a class="ic" href="tel:+'+PHONE+'" aria-label="Call"><svg><use href="#i-call"/></svg></a></div></div></article>';
+  }
+  function areaCard(a){
+    return '<a class="area" href="#/enquire" style="text-decoration:none"><div class="art '+a.c+'"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice"><use href="#'+a.art+'"/></svg><img class="ph" src="'+a.img+'" alt="" loading="lazy" onerror="this.remove()"></div><div class="body"><h3>'+a.n+'</h3><p>'+a.d+'</p><div class="row"><span>'+a.k+'</span><b>Enquire</b></div></div></a>';
+  }
+  document.getElementById("featured").innerHTML=LISTINGS.slice(0,6).map(card).join("");
+  document.getElementById("areas-home").innerHTML=AREAS.map(areaCard).join("");
+  document.getElementById("areas-all").innerHTML=AREAS.map(areaCard).join("");
+
+  /* router */
+  var pages=document.querySelectorAll(".page");
+  function route(){
+    var h=location.hash.replace(/^#\/?/,"")||"home", q={};
+    var parts=h.split("?"); h=parts[0]; if(parts[1]) parts[1].split("&").forEach(function(kv){var p=kv.split("=");q[decodeURIComponent(p[0])]=decodeURIComponent(p[1]||"");});
+    var found=false; pages.forEach(function(p){var on=p.dataset.page===h; p.classList.toggle("on",on); if(on) found=true;});
+    if(!found){pages.forEach(function(p){p.classList.toggle("on",p.dataset.page==="home");}); h="home";}
+    document.querySelectorAll("[data-nav]").forEach(function(a){ if(a.dataset.nav===h) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current"); });
+    window.scrollTo({top:0,behavior:"auto"});
+  }
+  window.addEventListener("hashchange",route); route();
+
+  /* lead form */
+  var form=document.getElementById("lead");
+  form.addEventListener("click",function(e){
+    var c=e.target.closest(".chip"); if(!c||c.dataset.k) return;
+    var grp=c.parentElement;
+    if(grp.dataset.single){ grp.querySelectorAll(".chip").forEach(function(x){x.setAttribute("aria-pressed","false");}); c.setAttribute("aria-pressed","true"); }
+    else { c.setAttribute("aria-pressed",c.getAttribute("aria-pressed")!=="true"); }
+  });
+  function picked(sel){return Array.prototype.map.call(form.querySelectorAll(sel+' .chip[aria-pressed="true"]'),function(b){return b.textContent;}).join(", ");}
+  function summary(){
+    var name=form.name.value.trim(), phone=form.phone.value.trim();
+    var s="Hi, I'm "+(name||"a prospective client")+".\nI want to: "+(picked('[data-single="intent"]')||"Buy");
+    var t=picked('[data-multi="type"]'); if(t) s+="\nType: "+t;
+    var b=picked('[data-single="budget"]'); if(b) s+="\nBudget: "+b;
+    var a=picked('[data-multi="area"]'); if(a) s+="\nAreas: "+a;
+    var w=picked('[data-single="when"]'); if(w) s+="\nTimeline: "+w;
+    if(phone) s+="\nMobile: "+phone;
+    var m=form.msg.value.trim(); if(m) s+="\nNotes: "+m;
+    return s;
+  }
+  function valid(){
+    var ok=true;
+    var n=form.name, p=form.phone;
+    n.closest(".fld").classList.toggle("bad",!n.value.trim()); if(!n.value.trim()) ok=false;
+    var digits=p.value.replace(/\D/g,""); var good=digits.length===10||(digits.length===12&&digits.slice(0,2)==="91");
+    p.closest(".fld").classList.toggle("bad",!good); if(!good) ok=false;
+    return ok;
+  }
+  form.addEventListener("submit",function(e){
+    e.preventDefault(); if(!valid()) return;
+    /* prototype: no backend yet — wire this to CRM / WhatsApp API later */
+    document.getElementById("lead-fields").style.display="none";
+    document.getElementById("lead-done").classList.add("on");
+    document.getElementById("done-wa").href=wa(summary());
+    document.getElementById("done-text").textContent="Thanks "+form.name.value.trim().split(" ")[0]+". Expect a call within the hour on working days.";
+    window.scrollTo({top:form.getBoundingClientRect().top+window.scrollY-90,behavior:"smooth"});
+  });
+  document.getElementById("lead-wa").addEventListener("click",function(){ window.open(wa(summary()),"_blank","noopener"); });
+})();
+</script>
+</body>
+</html>
